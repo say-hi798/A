@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>操作系统期中复习提纲（第1—4章 · 联想记忆版）</title>
+<style>
+:root{--ink:#1f2933;--muted:#5a6b7b;--accent:#1f5f8b;--teal:#0f766e;--bg:#f2f4f7;--card:#fff;--line:#d9e1e8;--head:#eaf1f7}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.78;font-size:15px;
+font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB","Noto Sans CJK SC","Source Han Sans SC",sans-serif}
+.layout{max-width:1200px;margin:0 auto;padding:28px 20px 64px;display:grid;grid-template-columns:232px minmax(0,1fr);gap:28px;align-items:start}
+nav.toc{position:sticky;top:16px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 12px;font-size:13.5px;box-shadow:0 1px 3px rgba(15,40,70,.06)}
+.toc-title{margin:0 0 8px;font-weight:700;color:#123a58;font-size:14px;letter-spacing:1px}
+nav.toc a{display:block;padding:5px 8px;border-radius:6px;border-left:3px solid transparent;color:#24425c;text-decoration:none;line-height:1.5}
+nav.toc a:hover{background:#eef4f9;border-left-color:var(--accent)}
+main{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:36px 44px;box-shadow:0 2px 10px rgba(15,40,70,.06);min-width:0}
+header.cover{border-bottom:2px solid var(--accent);padding-bottom:18px;margin-bottom:22px}
+h1{font-size:26px;line-height:1.4;margin:0 0 10px;color:#123a58;letter-spacing:.5px}
+.meta{color:var(--muted);font-size:13px;line-height:1.7}
+h2{font-size:20px;color:#123a58;margin:36px 0 14px;padding:8px 10px 8px 14px;border-left:5px solid var(--accent);background:linear-gradient(90deg,#eef4f9,transparent 85%)}
+h3{font-size:16.5px;color:#14506f;margin:24px 0 10px;padding-bottom:4px;border-bottom:1px dashed #cfdbe6}
+p{margin:8px 0}
+strong{color:#0b3c5d}
+ul,ol{margin:8px 0 10px 24px;padding:0}
+li{margin:4px 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13.5px;line-height:1.6}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:var(--head);font-weight:700;color:#173f5e}
+tbody tr:nth-child(even) td{background:#f8fafc}
+pre{background:#f6f8fa;border:1px solid #e3e9ef;border-left:4px solid var(--teal);border-radius:8px;padding:14px 16px;margin:14px 0;overflow-x:auto;
+font-family:"Cascadia Mono","Consolas","Courier New",monospace;font-size:12.5px;line-height:1.5;white-space:pre;tab-size:4}
+pre code{background:none;padding:0;border:0;font-family:inherit;font-size:inherit}
+code{font-family:"Cascadia Mono","Consolas","Courier New",monospace;background:#eef2f6;padding:1px 4px;border-radius:4px;font-size:.94em}
+.svg-wrap{margin:18px 0;padding:12px 12px 8px;border:1px solid var(--line);border-radius:10px;background:#fbfdff}
+svg{width:100%;height:auto;display:block}
+.caption{font-size:12.5px;color:var(--muted);text-align:center;margin-top:6px}
+a{color:#1f5f8b}
+@media (max-width:920px){.layout{grid-template-columns:1fr;padding:14px}nav.toc{position:static;order:2}main{padding:22px 16px}}
+@media print{
+@page{size:A4;margin:13mm 12mm}
+body{background:#fff;font-size:9.4pt;line-height:1.62;color:#111}
+.layout{display:block;max-width:none;padding:0}
+nav.toc{position:static;box-shadow:none;border:0;border-bottom:1pt solid #b9c3cc;border-radius:0;margin:0 0 10pt;padding:0 0 6pt;font-size:9pt}
+nav.toc a{display:inline-block;padding:1pt 10pt 1pt 0;border:0;color:#111;text-decoration:none}
+.toc-title{margin:0 0 4pt}
+main{border:0;border-radius:0;box-shadow:none;padding:0}
+header.cover{border-bottom:1pt solid #1f5f8b;margin-bottom:10pt;padding-bottom:6pt}
+h1{font-size:17pt}
+h2{font-size:12.5pt;break-before:page;break-after:avoid;background:none;border-left:3pt solid #1f5f8b;padding:3pt 0 3pt 6pt;margin:0 0 8pt}
+h3{font-size:10.8pt;break-after:avoid;margin:10pt 0 4pt}
+p,li{orphans:2;widows:2}
+table{font-size:8.1pt;line-height:1.45;margin:6pt 0;break-inside:auto}
+th,td{padding:3pt 4pt}
+thead{display:table-header-group}
+tr{break-inside:avoid}
+pre{font-size:7.6pt;line-height:1.35;padding:6pt 8pt;white-space:pre;overflow:visible;break-inside:avoid}
+.svg-wrap{padding:4pt;break-inside:avoid;background:#fff}
+.caption{font-size:8pt}
+a{color:#111;text-decoration:none}
+}
+
+/* ---- v2：框架树 / 跨章联想 / 附录C ---- */
+ul.tree{list-style:none;margin:14px 0;padding:12px 16px;background:#f6f8fa;border:1px solid #e3e9ef;border-left:4px solid var(--teal);border-radius:8px;font-size:13.5px;line-height:1.72}
+ul.tree li{list-style:none;padding:2px 0 2px 14px;position:relative;overflow-wrap:anywhere;word-break:break-word}
+ul.tree>li{font-weight:600;color:#0b3c5d;padding-left:16px}
+ul.tree>li::before{content:"";position:absolute;left:4px;top:.6em;width:6px;height:6px;border-radius:50%;background:#2c6f9e}
+ul.tree ul{margin:3px 0 3px 2px;padding-left:12px;border-left:1px dashed #b7c8d8}
+ul.tree ul li{font-weight:400;color:var(--ink);padding-left:12px}
+ul.tree ul li::before{content:"└";position:absolute;left:0;color:#8aa3b8;font-size:12px}
+.xlink{margin:10px 0 0;padding:8px 12px;background:#eef6fb;border:1px solid #d5e5f0;border-left:4px solid var(--accent);border-radius:6px;font-size:13.2px;color:#24425c}
+.xlink .xlink-tag{display:inline-block;font-weight:700;color:#fff;background:var(--accent);padding:1px 8px;border-radius:10px;margin-right:8px;font-size:11.5px}
+.xlink a{color:#14506f;font-weight:700;text-decoration:none;border-bottom:1px dotted #14506f}
+.tip{margin:10px 0;padding:9px 12px;background:#f4f8fc;border:1px solid #dbe7f2;border-left:4px solid #1f5f8b;border-radius:0 8px 8px 0;font-size:13.2px;color:#24425c;line-height:1.72}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 14px;padding:10px 12px;border:1px solid #cfe0ee;background:#f5f9fd;border-radius:8px}
+.chain .node{padding:4px 9px;border-radius:14px;background:#fff;border:1px solid #b9d3e5;color:#123a58;font-size:12.8px;font-weight:600;line-height:1.5}
+.chain .arrow{color:#0f766e;font-weight:700}
+table.mini{font-size:12.8px;margin:8px 0}
+table.mini th,table.mini td{padding:5px 7px}
+.qa{margin:0 0 18px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fcfdfe;break-inside:auto}
+.qa .q{margin:0;font-weight:700;color:#123a58;font-size:14.2px;line-height:1.65}
+.qa .num{color:#1f5f8b;margin-right:4px}
+.write-space{position:relative;height:5.1em;margin:8px 0 10px;border:1px dashed #c8d3de;border-radius:6px;background:repeating-linear-gradient(to bottom,transparent 0,transparent 1.7em,#e6ecf2 1.7em,#e6ecf2 calc(1.7em + 1px))}
+.write-space::before{content:"作答区";position:absolute;top:3px;left:8px;font-size:11px;color:#9aa9b8;font-weight:400}
+.qa .answer{border-left:3px solid var(--teal);background:#f3faf7;border-radius:6px;padding:9px 12px;font-size:13.4px;line-height:1.72}
+.qa .answer .tag{display:inline-block;font-size:11.5px;font-weight:700;color:#0f6b62;background:#ddf1ea;padding:1px 8px;border-radius:10px;margin-right:8px}
+.qa .answer ul{margin:4px 0 4px 18px}
+.qa .answer li{margin:2px 0}
+.qa .answer p{margin:4px 0}
+pre.calc{background:#fff;border:1px solid #dbe6ee;border-left:3px solid #2c6f9e;border-radius:6px;margin:6px 0;padding:7px 10px;font-size:12.3px;line-height:1.5}
+.flag{color:#b3541e;font-weight:700}
+pre{white-space:pre-wrap!important;overflow-x:visible!important;overflow-wrap:anywhere}
+table{table-layout:auto}
+th,td{word-break:break-word}
+@media print{
+ ul.tree{font-size:8.4pt;line-height:1.5;padding:6pt 8pt;margin:6pt 0}
+ .xlink{font-size:8.3pt;padding:4pt 6pt;margin:4pt 0}
+ .qa{padding:5pt 7pt;margin:0 0 8pt}
+ .qa .q{font-size:9.4pt}
+ .write-space{height:4.6em;margin:4pt 0 6pt}
+ .qa .answer{font-size:8.6pt;padding:4pt 6pt}
+ .tip{font-size:8.6pt;padding:4pt 6pt;margin:4pt 0}
+ .chain{gap:3pt;padding:4pt 6pt;margin:4pt 0 6pt}
+ .chain .node{font-size:8.2pt;padding:2pt 5pt}
+ table.mini{font-size:8pt}
+ pre.calc{font-size:8pt;padding:4pt 6pt}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc">
+<p class="toc-title">目录</p>
+<a href="#sec-5">跨章联想记忆 · 先背这一张网</a>
+<a href="#sec-1">第1章 操作系统概述</a>
+<a href="#sec-2">第2章 操作系统运行环境</a>
+<a href="#sec-3">第3章 进程线程模型</a>
+<a href="#sec-4">第4章 进程线程调度</a>
+<a href="#sec-6">附录A 课件表述差异（答题时按此处理）</a>
+<a href="#sec-7">附录B 解析说明（课件中仅图示、无文字的部分）</a>
+<a href="#sec-8">附录C 高频自测题与参考答案（含作答区）</a>
+</nav>
+<main>
+<header class="cover">
+<h1>操作系统期中复习提纲</h1>
+<div class="meta">覆盖第1—4章 ｜ 依据四章课件（修订-反馈版）整理 ｜ 含知识框架、核心概念与定义、易混对比、计算与状态图、跨章联想、附录A/B/C（含参考答案）<br>打印建议：A4 纵向，页边距默认；各章自动另起一页，表格跨页时表头自动重复。</div>
+</header>
+<blockquote>
+<p>依据课件：第1章《操作系统概述》、第2章《操作系统运行环境》、第3章《进程线程模型》、第4章《进程线程调度》（均为"修订-反馈"版）。本文只整理课件中出现的内容，并按修订后表述归纳；课件中仅有示意图、无文字说明的部分在文末单独标注。</p>
+</blockquote>
+<hr>
+<h2 id="sec-5">跨章联想记忆（第1—4章贯通）</h2>
+<p class="tip">把四章当成一条链来背：<b>硬件提供运行环境 → 中断让 OS 获得控制权 → 进程/线程成为运行实体 → 调度决定谁上 CPU → 时钟中断再把控制权交回 OS</b>。下面按“主线、同概念递进、成对易混、流程线、数字速记”五组归纳。</p>
+<div class="chain">
+<span class="node">第2章 硬件提供运行环境</span><span class="arrow">→</span>
+<span class="node">中断让 OS 获得控制权</span><span class="arrow">→</span>
+<span class="node">第3章 进程 / 线程成为运行实体</span><span class="arrow">→</span>
+<span class="node">第4章 调度决定谁上 CPU</span><span class="arrow">→</span>
+<span class="node">时钟中断把控制权交回 OS</span>
+</div>
+
+<h3>一、一条主线（从裸机到调度再回到中断）</h3>
+<ul>
+<li><b>第2章</b>：CPU、寄存器、存储、中断、时钟、I/O 构成 OS 的运行环境；PSW 标识内核态/用户态，特权指令与陷入机制保证 OS 的控制权。</li>
+<li><b>第2章 → 第3章</b>：中断/系统调用使 CPU 进入内核态，OS 才能执行进程控制原语（原语必须在管态下执行）；进程由此被创建、阻塞、唤醒。</li>
+<li><b>第3章 → 第4章</b>：进程状态图中的“就绪→运行”正是低级调度；“运行→就绪（时间片完）”正是抢占/轮转；“运行→阻塞（等待 I/O）”把 CPU 让给别的进程。</li>
+<li><b>第4章 → 第2章</b>：调度靠<b>时钟中断</b>计时与抢占，靠<b>中断</b>在进程阻塞/唤醒时重入内核，形成闭环。</li>
+<li><b>第1章</b>全程提供概念底座：OS 定义、五大功能、分时/实时/批处理的差异（时间片、吞吐量、响应时间、抢占性）。</li>
+</ul>
+
+<h3>二、同一概念的跨章递进</h3>
+<table>
+<thead><tr><th>概念</th><th>第1章</th><th>第2章</th><th>第3章</th><th>第4章</th></tr></thead>
+<tbody>
+<tr><td>用户态/内核态</td><td>定义；三种切换途径</td><td>别名、特权指令、PSW、x86 R0–R3；唯一经中断</td><td>原语必须在管态执行、常驻内存</td><td>内核抢占、SVR4 可抢占点、Linux 内核态执行系统调用</td></tr>
+<tr><td>中断/异常</td><td>外设中断是切换途径之一</td><td>定义、分类、响应、优先级、屏蔽、嵌套</td><td>阻塞/唤醒由事件驱动（如 I/O 完成）</td><td>调度时机“中断发生”；时钟中断驱动时间片与抢占</td></tr>
+<tr><td>优先级</td><td>系统进程优先级高于用户进程</td><td>x86 特权环级别（R0 最高）</td><td>进程/线程的调度对象</td><td>优先级法、静态/动态、SVR4 三类、Windows 实时/可变</td></tr>
+<tr><td>队列</td><td>—</td><td>设备/中断的等待与优先级次序</td><td>就绪队列、等待队列、运行队列；PCB 链接方式</td><td>FCFS 取队头、RR 放队尾、多级（反馈）队列</td></tr>
+<tr><td>时间片</td><td>分时系统设计思想（时间片轮转）</td><td>时钟中断实现计时</td><td>“运行→就绪＝时间片用完”</td><td>RR 算法；时间片长短的四个决定因素</td></tr>
+<tr><td>时钟</td><td>分时/实时都依赖计时</td><td>硬件时钟、软件时钟；时钟中断处理</td><td>进程生命周期与状态变化的计时基础</td><td>RR 计时、实时系统的实时时钟管理、限期调度</td></tr>
+<tr><td>存储保护</td><td>存储管理功能之一</td><td>界地址寄存器、存储键、PSW 钥匙域</td><td>PCB 现场信息含界地址寄存器</td><td>可抢占点要求内核数据结构一致或被信号量锁定</td></tr>
+<tr><td>系统调用/原语</td><td>—</td><td>系统调用定义、五类、处理过程、与过程调用的四点区别</td><td>原语（不可分割、管态）；fork/exec/wait</td><td>系统调用可触发调度；Linux 调度在核心态完成</td></tr>
+<tr><td>调度单位/资源单位</td><td>—</td><td>—</td><td>进程＝资源拥有单位；线程＝调度分派单位</td><td>多处理器线程调度（加载共享、组调度等）</td></tr>
+<tr><td>并发/并行</td><td>并发性、异步性</td><td>指令周期、中断嵌套</td><td>进程/线程并发，多核才真正并行</td><td>单处理器切换 vs 多处理器并行；多服务器排队结构</td></tr>
+</tbody>
+</table>
+
+<h3>三、成对易混概念速记</h3>
+<table>
+<thead><tr><th>概念对</th><th>一句话判别</th><th>出处</th></tr></thead>
+<tbody>
+<tr><td>进程 ↔ 程序</td><td>程序静态、永久；进程动态、有生命周期，是程序的一次运行活动</td><td>第3章</td></tr>
+<tr><td>进程 ↔ 线程</td><td>进程＝资源分配单位；线程＝调度分派单位；线程共享进程资源、切换开销小</td><td>第3章</td></tr>
+<tr><td>三状态 ↔ 五状态 ↔ 七状态</td><td>五状态加“创建/结束”；七状态再加“就绪挂起/阻塞挂起”（区分内存/外存）</td><td>第3章</td></tr>
+<tr><td>用户级 ↔ 核心级线程</td><td>用户级不依赖内核、切换快，但一个线程系统调用会阻塞整个进程；核心级由内核调度、可真并行，但开销大</td><td>第3章</td></tr>
+<tr><td>中断 ↔ 异常</td><td>中断是异步、外源、随机；异常是同步、由当前指令编码决定、位置可预言</td><td>第2章</td></tr>
+<tr><td>强迫性 ↔ 自愿性中断</td><td>强迫性：程序不期望、随机发生；自愿性：程序有意安排，通常由访管指令引起</td><td>第2章</td></tr>
+<tr><td>通道 ↔ DMA</td><td>通道是独立 I/O 处理机、可执行通道程序；DMA 是总线控制单元、成块搬运，有总线竞争</td><td>第2章</td></tr>
+<tr><td>界地址寄存器 ↔ 存储键</td><td>前者比地址上下限防越界；后者比“块键号 vs PSW 钥匙”防越权</td><td>第2章</td></tr>
+<tr><td>网络OS ↔ 分布式OS</td><td>网络OS架在不同 OS 之上靠协议统一配置；分布式OS用单一 OS 统一管理调度、位置透明</td><td>第1章</td></tr>
+<tr><td>整体式 ↔ 层次式 ↔ 微内核</td><td>整体式模块互调、效率高但独立性差；层次式单向调用、清晰可靠；微内核机制最小、服务在用户态、通信开销大</td><td>第1章</td></tr>
+<tr><td>抢占 ↔ 非抢占</td><td>高优先级/新进程能否打断正在运行者；分时课件称不可抢占，实时可抢占</td><td>第4章/第1章</td></tr>
+<tr><td>静态 ↔ 动态优先级</td><td>创建时定、全程不变 vs 随进程推进而变（如用完时间片降、阻塞后升）</td><td>第4章</td></tr>
+<tr><td>FCFS ↔ SJF ↔ RR</td><td>按到达先后 / 最短运行时间 / 时间片轮转；FCFS 利于长作业，SJF 平均等待短但长作业不利，RR 适合分时</td><td>第4章</td></tr>
+<tr><td>硬实时 ↔ 软实时</td><td>超时是否产生严重后果</td><td>第1章</td></tr>
+<tr><td>批处理 ↔ 分时 ↔ 实时</td><td>成批自动转接 / 时间片交互 / 限时响应；交互性由弱到强、时限要求由无到严</td><td>第1章</td></tr>
+</tbody>
+</table>
+
+<h3>四、可串成一条线的事件流程</h3>
+<ul>
+<li><b>启动线（第1章）</b>：开机 → BIOS 自检并选可引导设备 → 读 MBR 启动程序（GRUB）→ 取内核与镜像文件系统路径 → 内核与镜像文件系统入内存 → 加载驱动、初始化进程 → 用户交互。</li>
+<li><b>中断线（第2章）</b>：中断请求 → 指令周期末扫描中断寄存器 → 保存 PSW/PC 等现场入系统堆栈 → 切内核态 → 查中断向量表得入口 → 执行处理程序 → 恢复现场、中断返回（可嵌套）。</li>
+<li><b>系统调用线（第2章）</b>：用户执行访管/陷入指令 → 硬件转内核态 → 陷入机构保护现场 → 按功能号查入口地址表 → 执行系统子程序 → 恢复现场 → 返回用户程序。</li>
+<li><b>进程生命周期线（第3章 × 第4章）</b>：创建 → 提交 → 就绪 →（调度）→ 运行 →（时间片完）就绪 /（等待事件）阻塞 →（事件出现）就绪 → … → 释放结束。</li>
+<li><b>作业调度线（第4章 × 第3章）</b>：作业到达后备队列 → 作业调度调入内存、建进程 → 就绪队列 → 进程调度 → 占用 CPU → 完成或阻塞 → 唤醒后再入就绪队列。</li>
+</ul>
+
+<h3>五、数字与结论速记</h3>
+<table>
+<thead><tr><th>数字/结论</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td>5 / 5 / 5</td><td>五大功能；五大特征（小结只强调并发、共享、随机三条）；五种研究观点</td></tr>
+<tr><td>2 / 3 / 4</td><td>两种运行级别；三种用户态→内核态途径；x86 四个特权环 R0–R3</td></tr>
+<tr><td>5 + 1</td><td>强迫性中断 5 类（程序性、时钟、I/O、控制台、硬件故障）＋自愿性中断</td></tr>
+<tr><td>4 档</td><td>中断优先级：机器故障 &gt; 程序/访管 &gt; 外部 &gt; 输入输出</td></tr>
+<tr><td>5 / 4</td><td>系统调用 5 类；与一般过程调用的 4 点区别</td></tr>
+<tr><td>3 / 5 / 7</td><td>进程组成 3 要素；进程状态 3/5/7 模型</td></tr>
+<tr><td>2 / 3</td><td>PCB 内容 2 大类（调度信息、现场信息）；PCB 组织 3 种（线性、索引、链接）</td></tr>
+<tr><td>4 / 3</td><td>线程组成 4 部分；线程实现 3 种方式</td></tr>
+<tr><td>3 / 5 / 5</td><td>调度功能 3 项；调度时机 5 种；性能指标 5 项</td></tr>
+<tr><td>26 / 6.33</td><td>FCFS 课件算例：平均周转 26、平均带权周转 6.33</td></tr>
+<tr><td>18.5 / 3.14；19.75 / 3.38</td><td>RR 课件算例：q=1 与 q=4 的平均周转/平均带权周转</td></tr>
+<tr><td>0.15μs</td><td>二级存储平均访问时间算例（命中率 0.95）</td></tr>
+<tr><td>160 / 3</td><td>SVR4 共 160 个优先级，分实时（159–100）、内核（99–66）、分时（59–0）三类</td></tr>
+<tr><td>3 / 4 / 7</td><td>Linux 调度策略 3 种；实时调度方法 4 类；限期调度任务属性 7 项</td></tr>
+<tr><td>越小越高</td><td>BSD 的 Pj(i)：值越小优先级越高；RMS 中周期越短优先级越高</td></tr>
+</tbody>
+</table>
+<hr>
+<h2 id="sec-1">第1章 操作系统概述</h2>
+<h3>一、知识框架</h3>
+<ul class="tree"><li>1.1 概念<ul><li>计算机系统 = 硬件子系统 + 软件子系统（OS属于系统软件）</li><li>定义：程序模块的集合，管资源、控流程、供服务，使系统高效运行</li><li>五大功能：进程(处理器)管理 / 存储管理 / 文件管理 / 作业管理 / 设备管理</li><li>五大特征：并发性、共享性、虚拟性、异步性、随机性</li><li>五种研究观点：软件 / 资源管理 / 进程 / 虚机器 / 服务提供者</li><li>运行级别：用户态、内核态（三种切换途径）</li></ul></li><li>1.2 发展：手工操作 → 监控程序(单道批处理) → 多道批处理 → 分时/实时 → UNIX → PC OS → 分布式/机群/嵌入式</li><li>1.3 分类：批处理、分时、实时、个人计算机、网络、分布式、嵌入式、其他</li><li>1.4 设计：三个困难、三类设计、六项设计目标、四种体系结构</li><li>1.5 启动：BIOS/UEFI → 引导记录 → 内核 → 初始化系统</li></ul>
+<p class="xlink"><span class="xlink-tag">跨章联想</span>本章的“进程管理”在第3章展开为进程/线程模型，“调度”在第4章展开为调度算法；“用户态/内核态”在第2章细化为特权指令、PSW 与中断。 <a href="#sec-5">见「跨章联想记忆」</a></p><h3>二、必须掌握的概念与定义</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>操作系统</td>
+<td>具有各种功能的、大量程序模块的集合；①有效组织和管理软硬件资源（用表格/数据结构登记资源的名称、类型、数量、用途、完好状态、使用状态并动态更新）；②合理组织工作流程、控制程序执行（"公平"对待用户程序，避免死锁与饥饿）；③向用户和开发人员提供服务接口</td>
+</tr>
+<tr>
+<td>并发性</td>
+<td>系统中同时运行若干程序；用户程序之间、用户程序与OS程序之间并发执行</td>
+</tr>
+<tr>
+<td>共享性</td>
+<td>系统程序与用户程序共用CPU、内存、外存、外设；分互斥共享与同时共享</td>
+</tr>
+<tr>
+<td>虚拟性</td>
+<td>一种管理技术：物理上一个实体变成逻辑上多个对应物，或物理上多个实体变成逻辑上一个对应物</td>
+</tr>
+<tr>
+<td>随机性</td>
+<td>OS在随机环境下运行，不能对程序行为和硬件情况作事先假定，设计须考虑各种可能</td>
+</tr>
+<tr>
+<td>异步性</td>
+<td>多道环境下因资源有限，进程走走停停、以不可预知的速度推进</td>
+</tr>
+<tr>
+<td>用户态</td>
+<td>非特权执行状态，禁止潜在危险操作（写系统配置文件、销毁他人进程、重启系统等）</td>
+</tr>
+<tr>
+<td>内核态</td>
+<td>内核运行模式，可无限制访问系统存储与外部设备</td>
+</tr>
+<tr>
+<td>用户态→内核态</td>
+<td>三种途径：<strong>系统调用</strong>（进程主动请求OS服务）、<strong>异常</strong>（用户态程序发生事先不可知的异常）、<strong>外围设备中断</strong>（设备完成操作后发中断信号，CPU转去执行中断处理程序）</td>
+</tr>
+<tr>
+<td>内核态→用户态</td>
+<td>通过设置PSW（修改程序状态字）实现（见第2章）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>研究操作系统的五种观点</strong>：软件的观点（外特性=操作命令与界面，内特性=软件结构）、资源管理的观点（登记/协调/保护/虚拟扩充资源）、进程的观点（多个独立运行程序+协调核心）、虚机器的观点（裸机扩充为虚拟计算机，OS功能统称"操作系统虚机器"）、服务提供者的观点（从用户外部看，OS提供更强、更高质量的服务）。</p>
+<p><strong>五大功能要点</strong></p>
+<ul>
+<li>进程管理：进程控制、进程同步（互斥与同步）、进程间通信、调度（线程/进程/作业调度）。</li>
+<li>存储管理：内存分配与回收、存储保护（防越界）、内存扩充（虚拟存储，页面按4K划分）。</li>
+<li>文件管理：存储空间管理（多用离散分配）、目录管理（按名存取）、文件系统安全性（读写权限与存取控制）。</li>
+<li>作业管理：为用户提供使用系统的良好环境，组织工作流程。</li>
+<li>设备管理：CPU与内存之外所有I/O设备的管理，负责分配、启动、故障处理。
+（课件另表述为"进程管理（处理器管理）、存储管理、文件管理、作业管理、设备管理"五类。）</li>
+</ul>
+<h3>三、易混 / 易考对比点</h3>
+<p><strong>1. 批处理 vs 分时 vs 实时</strong></p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>批处理（简单/多道）</th>
+<th>分时</th>
+<th>实时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工作方式</td>
+<td>收一批作业组成作业流，由监控程序自动转接、串行或多道执行</td>
+<td>用户经终端交互提命令，系统按<strong>时间片轮转</strong>服务并回显结果</td>
+<td>在规定时间内及时响应外部事件并完成处理，控制实时设备与任务协调一致</td>
+</tr>
+<tr>
+<td>交互性</td>
+<td>用户不能直接交互，不适合调试</td>
+<td>强交互</td>
+<td>弱（面向事件与时限）</td>
+</tr>
+<tr>
+<td>设计思想</td>
+<td>成批输入、自动定序（作业控制说明书控制作业步）</td>
+<td>把CPU时间划成若干时间片，轮流为各终端用户服务</td>
+<td>实时时钟管理 + 过载防护 + 高可靠性</td>
+</tr>
+<tr>
+<td>典型特点</td>
+<td>资源利用率高、吞吐量大、流程自动化高</td>
+<td>多路性、交互性、独占性、及时性</td>
+<td>高精度计时、多级中断、实时调度；<strong>可抢占</strong></td>
+</tr>
+<tr>
+<td>抢占性</td>
+<td>—</td>
+<td>课件表述为"不可抢占"（时间片用完才切换）</td>
+<td><strong>可抢占</strong></td>
+</tr>
+<tr>
+<td>分类</td>
+<td>简单批处理、多道批处理</td>
+<td>—</td>
+<td>硬实时（超时后果严重）、软实时（超时只影响服务质量）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2. 单道批处理 vs 多道批处理</strong></p>
+<table>
+<thead>
+<tr>
+<th>单道批处理（监控程序）</th>
+<th>多道批处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自动、批量、单道（内存仅一道程序，可看作串行）</td>
+<td>多道（内存同时存放多道程序）</td>
+</tr>
+<tr>
+<td>CPU利用率与系统吞吐量低</td>
+<td>宏观上并行、微观上串行（轮流占用CPU、交替执行）</td>
+</tr>
+<tr>
+<td>—</td>
+<td>作业处理时间长、交互能力差、运行过程不确定</td>
+</tr>
+</tbody>
+</table>
+<p><strong>3. SPOOLing（假脱机）</strong>：全称"同时的外部设备联机操作"，借助<strong>通道</strong>（专门控制I/O的硬件设备，可看作I/O处理机，自主控制外设、与CPU并行）实现I/O与处理器自动并行处理，为多道批处理的多道程序设计提供基础。</p>
+<p><strong>4. 通用操作系统</strong>：结合分时与批处理，原则是"<strong>分时优先、批处理在后</strong>"；分时态称前台（响应频繁交互的作业），批处理态称后台（处理时间性要求不强的作业）。</p>
+<p><strong>5. 网络OS vs 分布式OS</strong></p>
+<ul>
+<li>网络OS：建立在各种计算机OS之上，按网络体系结构协议标准开发；可架在不同本机OS上，通过网络协议统一配置网络资源。网络模式有集中式和分布式两种。</li>
+<li>分布式OS：网络OS的更高级形式，特征为：①所有主机使用统一OS；②资源深度共享（任务可迁移）；③透明性（用户不知有多少台机、位置差异透明）；④自治性（无主从关系，单机失效一般不影响整个系统）。</li>
+<li>另有<strong>机群（cluster）</strong>：分布式系统的一种，由一群处理器密集构成，用低成本微机+以太网构造接近超级计算机性能的系统。</li>
+<li>核心区别：网络OS"不同OS之上+协议统一配置"；分布式OS"单一OS统一管理调度、访问方式一致、位置无关"。</li>
+</ul>
+<p><strong>6. 嵌入式OS 五特点</strong>：内核小、专业性强（与硬件紧耦合、不可通用）、系统精简、高实时性、多任务。</p>
+<p><strong>7. 四种体系结构</strong></p>
+<table>
+<thead>
+<tr>
+<th>结构</th>
+<th>基本思想</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>整体式（模块组合）</td>
+<td>总功能→子功能→模块，接口连接成整体</td>
+<td>结构紧密、接口简单直接、效率较高</td>
+<td>模块转接随意、独立性差、结构不清晰；数据作全程量易被任意存取修改；常以大型表为中心、全局封中断限制并发</td>
+</tr>
+<tr>
+<td>层次式</td>
+<td>按功能流图调用次序分层，层间<strong>单向依赖/单向调用</strong>，无循环</td>
+<td>组织与依赖关系清晰，可读性、可适应性好；下层正确即上层可靠，可靠性高；增删一层不影响其他层；易调试/修改/扩充/维护/保证正确性</td>
+<td>（课件未列缺点）</td>
+</tr>
+<tr>
+<td>微内核（客户/服务器）</td>
+<td>内核只保留所有OS都有的操作（线程调度、虚拟存储、消息传递、设备驱动、原语、中断处理）；其余功能拆成运行在<strong>用户态的服务进程</strong>，以客户/服务器方式收发消息</td>
+<td>可靠（某服务器失败不引起其他崩溃）、灵活（改服务不影响系统其他部分）、适于分布式处理</td>
+<td>只能通过微内核通信，通信频繁时效率低</td>
+</tr>
+<tr>
+<td>外核（Exokernel）</td>
+<td>内核只做硬件资源的申请、释放与复用，以往OS提供的抽象全部放到用户空间，实现<strong>应用级资源管理</strong>（由应用程序而非OS管理硬件）</td>
+<td>（课件未列）</td>
+<td>（课件未列）</td>
+</tr>
+</tbody>
+</table>
+<p>层次式分层原则：①与机器特点紧密相关的软件（中断处理、I/O管理、BIOS）放最内层，硬件环境改变只改这层；②共同使用的基本部分放内层，易变部分放外层；③系统调用的各功能构成内核，放系统内层。</p>
+<p><strong>8. 典型系统结构实例</strong>：Unix（分层，内核管硬件资源+系统调用接口）、Linux（模块化，内核负责驱动/调度/内存管理）、Windows（混合内核+GUI与API）、Android（基于Linux内核+虚拟机运行应用）、鸿蒙（微内核，只含任务管理、内存分配等必要模块）、OpenEuler（面向数字基础设施、多场景、多样性计算的开源OS）、银河麒麟（国产、多CPU支持）、中标麒麟（基于Linux的商业OS，社区版Ubuntu Kylin）。</p>
+<h3>四、发展与启动（背诵要点）</h3>
+<ul>
+<li><strong>四代</strong>：第一代电子管（1946—1957）、第二代晶体管（1958—1964）、第三代集成电路（1965—1970）、第四代大规模/超大规模集成电路（1971至今）。</li>
+<li><strong>发展线索</strong>：手工操作（插板硬连线、机器语言、穿孔卡片，手工操作+独占）→ 监控程序/早期批处理（高级语言出现，作业成批输入、自动定序，单道批处理）→ 多道批处理（通道使I/O与CPU并行，多道程序设计）→ 分时与实时系统 → UNIX（20世纪60年代末贝尔实验室 Ken Thompson、Dennis M. Ritchie，C语言编写可移植，多用户多任务分时，树形文件系统、shell）→ PC OS（MS-DOS为单用户单任务；1984苹果图形界面；1992 Windows 3.1；1995 Windows 95；1991 Linus 公布 Linux）→ 当代两大方向：大型系统（分布式、机群）、微型系统（嵌入式，如"极地探路者"用VxWorks）。</li>
+<li><strong>设计三困难</strong>：设计复杂程度高（程序长、接口信息多、动态性强、并行性强）、正确性难以保证（靠软件工程规范保证）、研制周期长。</li>
+<li><strong>设计三部分</strong>：功能设计（定功能与类型）、算法设计（选算法策略并估算效能）、结构设计（选结构、分解抽象综合）。三者互相渗透。</li>
+<li><strong>六项设计目标</strong>：可靠性（正确性+健壮性）、高效性、易维护性（易读/易扩充/易剪裁/易修改）、可移植性、安全性、简明性。</li>
+<li><strong>结构设计三目标</strong>：系统模块化、模块标准化、通信规范化。</li>
+<li><strong>启动</strong>：BIOS引导（自检、初始化硬件，按CMOS启动顺序读取引导记录）与UEFI引导（模块化、C语言构建，加载EFI驱动识别并初始化硬件）。</li>
+<li><strong>引导过程五步</strong>：开机BIOS自检并检测第一个可引导设备 → 运行MBR扇区启动程序（如GRUB）→ GRUB读配置取得内核与镜像文件系统路径 → 内核与镜像文件系统装入内存 → 加载硬件驱动、初始化进程。</li>
+<li><strong>启动四阶段</strong>：BIOS自检 → 系统引导（引导记录装入内存并执行）→ 启动内核（内核入口执行）→ 初始化系统（允许用户交互）。</li>
+<li><strong>程序典型执行流程</strong>：用户启动 → 装入内存 → 分配资源（CPU时间、内存、I/O设备）→ CPU顺序执行 → 与OS交互请求服务 → 结束回收资源。</li>
+</ul>
+<hr>
+<h2 id="sec-2">第2章 操作系统运行环境</h2>
+<h3>一、知识框架</h3>
+<ul class="tree"><li>2.1 层次结构：硬件(CPU/存储/中断/IO/时钟) + 软件(系统软件[OS、编译系统]、支撑软件、应用软件)</li><li>2.2 CPU：组成 → 寄存器(用户可见/控制状态) → 指令周期与五类指令 → 特权指令 → 处理器状态 → PSW</li><li>2.3 存储系统：分类 → 分块 → 层次结构 → 局部性原理 → 平均访问时间 → 存储保护(界地址寄存器/存储键)</li><li>2.4 中断机制：定义/作用 → 概念术语 → 分类 → 中断系统 → 接收/响应/处理 → 优先级/屏蔽/嵌套</li><li>2.5 I/O技术：轮询 → 通道 → DMA → 缓冲/Cache</li><li>2.6 时钟：作用 → 硬件/软件时钟 → 绝对/相对时钟</li><li>2.7 系统调用：定义 → 分类 → 与过程调用区别 → 处理过程 → 参数传递</li></ul>
+<p class="xlink"><span class="xlink-tag">跨章联想</span>本章的中断是第4章“调度时机”的来源；PSW、特权级与陷入机制，决定了第3章原语必须在管态执行、第4章内核可抢占。 <a href="#sec-5">见「跨章联想记忆」</a></p><h3>二、必须掌握的概念与定义</h3>
+<p><strong>CPU 与寄存器</strong></p>
+<ul>
+<li>CPU组成：运算器（算术逻辑运算）、控制器（取指令、维护CPU状态、与内存交互）、寄存器（暂存数据/地址/指令，访问最快、造价高、容量小）、高速缓存（匹配高速指令处理与低速内存访问，快于内存慢于寄存器）。</li>
+<li>两类寄存器：<strong>用户可见寄存器</strong>（高级语言编译器分配使用，减少访存；含数据寄存器、地址寄存器、条件码寄存器，机器语言直接引用）；<strong>控制和状态寄存器</strong>（控制处理器操作，多数对用户不可见，部分仅在特权模式可访问）。</li>
+<li><strong>PC</strong>：记录将要取出的指令地址；<strong>IR</strong>：包含最近取出的指令；<strong>PSW</strong>：记录处理器运行模式等信息。</li>
+<li><strong>PSW内容</strong>：CPU工作状态代码（内核态/用户态）、条件码（反映指令执行结果特征）、中断屏蔽码（是否允许中断）。实例标志位：CF进位、ZF结果为零、SF符号、OF溢出（标准条件位），TF陷阱、IF中断使能/屏蔽、VIF/VIP虚拟中断、IOPL（IO特权级）。</li>
+<li><strong>指令周期</strong>：取指（从存储器读指令）+ 执行（解释并执行）；PC通常在取指后自增一个指令长度；程序由不断取指执行组成，仅关机、出错或停机指令才停止。</li>
+<li><strong>五类指令</strong>：访存指令、I/O指令、算术逻辑指令（数据处理）、控制转移指令、处理器控制指令。</li>
+</ul>
+<p><strong>特权指令与处理器状态</strong></p>
+<ul>
+<li>特权指令：只能由操作系统使用的指令（如I/O指令、停机指令）；使用特权指令一般引起处理器状态切换。</li>
+<li><strong>陷入（trap）</strong>：处理器通过特殊机制切换到操作系统运行的特权状态，并把处理权交给OS中一段特殊代码的过程。</li>
+<li>内核态（管态、特权态、系统态、核心态）；用户态（目态、普通态）。有的系统分核心态、管理态、用户程序态（目标态）三种。</li>
+<li>x86 四个特权环 R0—R3：特权依次降低，R0≈内核态、R3≈用户态，R1/R2介于其间（R0核心代码、R1关键设备驱动与I/O例程、R2受保护共享代码如语言运行环境、R3用户程序）；现有UNIX/Linux/Windows多只用R0与R3。</li>
+<li>内核态：全部指令（含特权指令）可执行、可用所有资源、能改变处理器状态；用户态：只能执行非特权指令。特权级别越高，可运行指令集合越大，且包含低级别的指令集合。</li>
+<li><strong>状态转换</strong>：用户态→内核态的<strong>唯一途径是通过中断</strong>（课件第2章表述；第1章按系统调用/异常/外设中断三类列出，含义相同，见文末"表述差异"）；内核态→用户态通过设置PSW指令实现。</li>
+<li><strong>限制用户执行特权指令</strong>：用户程序占用CPU时CPU应在用户态；遇特权指令则拒绝执行并形成"非法操作"事件，由中断机制转交OS处理，OS通知用户"程序中有非法指令"。</li>
+</ul>
+<p><strong>存储系统</strong></p>
+<ul>
+<li>只CPU可直接访问主存；作业程序与数据必须在主存才能运行；多道程序须由OS管理保护。</li>
+<li>存储器类型：读写型 RAM；只读型 ROM（变型 PROM可编程、EPROM紫外线擦除后可写）；微机中BIOS、CBASIC解释程序等固化在ROM。</li>
+<li>存储单位：最小单位"二进位"（0/1）；最小编址单位是字节（一般8位）；1KB=1024B，1MB=1024KB……；不少系统把存储器分成块（物理页块）。</li>
+<li>层次结构设计三问题：容量、速度、成本，三者不能同时最优，需权衡；层次下降→每比特价格下降、容量增大、速度变慢、访问频率下降；用"小、贵、快"由"大、便宜、慢"作后盾，靠访问频率控制提高效能。</li>
+<li><strong>存储访问局部性原理</strong>：程序有许多循环与子调用，重复存取相同指令集合；数据存取也在短时间内稳定在局部区域；一段时间后使用的代码与数据集合会改变。它是提高存储系统效能的关键。</li>
+<li><strong>存储保护</strong>：必须有硬件支持，两类方法——<strong>界地址寄存器（界限寄存器）</strong>：设一对界限寄存器存作业下限/上限，或基址寄存器+限长寄存器；访存时硬件自动判越界，越界产生程序中断（越界中断/存储保护中断）。<strong>存储键</strong>：每存储块附一个保护键，作业进入主存时分给唯一键号并写入各块，运行时该键号放入PSW的存储键钥匙域；每次访存比较主存块存储键与PSW钥匙，相符允许、否则拒绝报警。</li>
+</ul>
+<p><strong>中断机制</strong></p>
+<ul>
+<li><strong>中断定义</strong>：CPU对系统中或系统外发生的<strong>异步事件</strong>的响应（异步事件=无一定时序关系、随机发生的事件）；中断处理器暂停当前程序转去处理，处理完返回断点继续执行。</li>
+<li><strong>作用</strong>：解决主机与外设并行工作；消除因外设慢速造成主机等待；为多机操作与实时处理提供硬件基础；充分发挥处理器效率；提高系统实时能力。</li>
+<li><strong>术语</strong>：中断请求（中断源向处理器发出的请求信号）、中断处理程序、中断断点、中断响应、中断返回、中断字（中断源的有序集合）、中断向量表（中断处理程序入口地址表）。</li>
+<li><strong>分类（按是否自愿）</strong>：<strong>强迫性中断</strong>（程序不期望、随机发生）：程序性中断、时钟中断、I/O中断（由I/O控制器产生）、控制台中断、硬件故障中断；<strong>自愿性中断</strong>（程序有意安排，通常由访管指令引起，目的是要求OS提供系统服务）。</li>
+<li><strong>分类（按同步性）</strong>：<strong>异步中断（简称中断）</strong>：对当前程序而言的外部事件激发，外源、随机——时钟、I/O、控制台、硬件故障；<strong>同步中断（异常）</strong>：由当前程序编码决定，位置可准确预言——程序性中断、访管指令异常。</li>
+<li><strong>中断系统</strong>两大组成：硬件中断装置（捕获中断请求、响应并把控制权交给特定处理程序）+ 软件中断处理程序。硬件用中断逻辑线路+中断寄存器（接收中断信号的触发器全体）实现。</li>
+<li><strong>中断响应</strong>：时机=每条指令执行周期的最后时刻扫描中断寄存器；工作=保存断点上下文（PSW、PC中下一条指令位置、部分寄存器值）到系统堆栈 → 切换到内核态 → 按中断向量号查中断向量表得处理程序入口 → 将PC置为该地址 → 控制权转移。五步：接收中断信号 → 保护现场（PSW、PC入系统堆栈）→ 分析中断向量取入口地址 → PC置入口地址 → 调用中断处理程序。</li>
+<li><strong>中断向量表</strong>：有的机器把主存最低128个字保留作中断向量表，每个中断向量占两个字；设备接口发送"中断向量"（该设备在表中的表目地址指针）以标识自己。</li>
+<li><strong>中断优先级</strong>（课件排序）：机器故障中断最高 → 程序中断与访管中断次之 → 外部中断更次之 → 输入输出中断最低。</li>
+<li><strong>中断屏蔽</strong>：用PSW中的中断屏蔽码禁止某些中断；禁止位置位则屏蔽；未置位则只接受优先级高于运行程序的那些中断；设备接口也有中断禁止位。<strong>机器故障中断不可屏蔽</strong>，须立即响应。</li>
+<li><strong>中断嵌套</strong>：处理多个中断的两种策略——①处理一个中断时禁止其他中断（对新中断置之不理）；②允许高优先级中断打断低优先级处理过程（<strong>更优</strong>）。嵌套时每层现场压入系统堆栈，逐层弹出恢复（PSW、PC及重要现场）。</li>
+<li><strong>典型中断处理</strong>：I/O中断（正常结束与异常两类；继续I/O需重启，等待I/O的程序应唤醒；失败重执行有次数上限，过多判硬件故障）；时钟中断（维护软件时钟、处理器调度、控制系统定时任务、实时处理）；硬件故障中断（保存现场、警告管理员并提供诊断信息，高可靠系统评估可用性并尽量恢复）；程序性中断（多为指令出错、越权、寻址越界引发保护，处理分"只能由OS完成"与"可由程序自己完成"两类，如断点/单步跟踪可由用户程序处理）；自愿性中断（访管指令激发，x86用int，其他处理器提供syscall；指令格式为指令名+服务识别号/中断号；处理器不定义系统调用参数格式）。</li>
+</ul>
+<p><strong>I/O 技术</strong></p>
+<ul>
+<li>早期I/O结构：CPU定期轮询各设备控制器状态，耗费大量时间、效率低，已淘汰。</li>
+<li><strong>通道</strong>：独立于CPU、专门负责数据I/O传输的处理单元（I/O处理机），统一管理外设、代替CPU控制I/O，使CPU与外设并行。原理：执行"启动外设"指令→控制权转移到通道→通道控制外设与主存间信息传送→结束后形成"I/O操作结束"中断事件。</li>
+<li><strong>DMA</strong>：由系统总线中独立控制单元自动控制<strong>成块数据</strong>在内存与I/O单元间传送；CPU发一条命令（含I/O设备编址、主存起止编址、传送长度）后可处理他事；传送完成发中断。总线竞争不引起中断、不保存上下文，CPU稍等一个总线周期，DMA期间CPU访存变慢；大量数据I/O时价值大。</li>
+<li><strong>缓冲技术</strong>：缓冲区是设备间传输数据时暂存数据的存储区域；用于CPU与主存、CPU与外设、设备与设备三种通信场合；目的解决部件速度不匹配。</li>
+<li><strong>多缓冲（Cache）</strong>：Cache是离CPU最近的高速内存；CPU先查一级Cache，再二级Cache，最后系统内存；主存分块（每块K字，共M=2^n/K块），Cache有C个槽（C远小于M）；块不在Cache时整块移入某槽，替换策略由Cache管理单元决定，槽有标记表明对应主存块地址。</li>
+</ul>
+<p><strong>时钟</strong></p>
+<ul>
+<li>作用：发现死循环、防止机时浪费；分时系统实现时间片轮转；实时系统按时间间隔输出信号控制设备；定时唤醒外部事件；记录绝对时间（年月日）。</li>
+<li><strong>硬件时钟</strong>：晶体振荡器产生固定脉冲频率，时钟寄存器按脉冲数加1。<strong>软件时钟</strong>：用内存单元模拟时钟寄存器，用一段程序计算脉冲数并对内存时钟寄存器加1或减1。</li>
+<li>课件小结另提：时钟分硬件/软件时钟，以及<strong>绝对时钟和相对时钟（间隔时钟）</strong>。</li>
+</ul>
+<p><strong>系统调用</strong></p>
+<ul>
+<li>定义：用户在程序中调用操作系统提供的一些子功能；是一种<strong>特殊的过程调用</strong>，通常由特殊机器指令实现；除调用OS子程序外还使系统转入特权方式；只能由汇编语言直接访问，是OS提供给编程人员的<strong>唯一接口</strong>；用于动态请求/释放系统资源、完成与硬件相关工作、对用户屏蔽OS具体动作；系统调用命令称"<strong>广义指令</strong>"，也称"<strong>虚处理机</strong>"。</li>
+<li>分类：进程控制类、文件操作类、进程通信类、设备管理类、信息维护类。</li>
+<li><strong>处理过程</strong>：①用户执行系统调用指令→处理机发生中断并向陷入处理机构发信号；②处理机构启动相应处理程序完成功能；③服务机构称陷入（TRAP）/异常处理机构；④引起中断的指令称陷入/异常指令（访管指令）；⑤每个系统调用有事先给定的<strong>功能号</strong>；⑥各功能子程序编有<strong>入口地址表</strong>；⑦进入前后由陷入机构保存与恢复现场。执行"保护现场→取功能号查子程序入口→返回"。</li>
+<li><strong>参数传递方式</strong>：陷入指令自带参数；通过通用寄存器传递参数；发生访管中断时由硬件自动把PSW相应位由用户模式转为系统模式。</li>
+</ul>
+<h3>三、易混 / 易考对比点</h3>
+<p><strong>1. 中断 vs 异常</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>中断（异步中断）</th>
+<th>异常（同步中断）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>来源</td>
+<td>当前程序之外的外部事件（外源）</td>
+<td>当前程序编码决定（内源）</td>
+</tr>
+<tr>
+<td>可预见性</td>
+<td>随机，不可准确预言</td>
+<td>发生位置可准确预言</td>
+</tr>
+<tr>
+<td>典型</td>
+<td>时钟、I/O、控制台、硬件故障</td>
+<td>程序性中断、访管指令异常</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2. 强迫性中断 vs 自愿性中断</strong>：前者程序不期望、随机发生（程序性、时钟、I/O、控制台、硬件故障）；后者程序有意安排、通常由访管指令引起，目的是请求OS服务。</p>
+<p><strong>3. 通道 vs DMA</strong></p>
+<table>
+<thead>
+<tr>
+<th>通道</th>
+<th>DMA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>独立于CPU的I/O处理机，统一管理外设，可执行通道程序</td>
+<td>总线上的独立控制单元，自动完成成块数据传送</td>
+</tr>
+<tr>
+<td>控制权整体移交通道，CPU与外设并行</td>
+<td>CPU发一条命令后即可做其他事，传送结束中断通知</td>
+</tr>
+<tr>
+<td>—</td>
+<td>存在总线竞争，CPU访存变慢，但不引起中断/不保存上下文</td>
+</tr>
+</tbody>
+</table>
+<p><strong>4. 界地址寄存器 vs 存储键</strong>：前者用上下限（或基址+限长）做地址越界检查，越界产生中断；后者给存储块分配键号，与PSW钥匙域比较，不符则拒绝并报警。二者都需硬件支持。</p>
+<p><strong>5. 系统调用 vs 一般过程调用（四个方面）</strong></p>
+<table>
+<thead>
+<tr>
+<th>方面</th>
+<th>系统调用</th>
+<th>一般过程调用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>运行状态</td>
+<td>调用程序运行在用户态，被调用程序运行在内核态</td>
+<td>两者均在同一状态（用户态）</td>
+</tr>
+<tr>
+<td>状态转换</td>
+<td>发生用户态→内核态切换（由访管指令/硬件自动完成）</td>
+<td>无状态切换</td>
+</tr>
+<tr>
+<td>返回问题</td>
+<td>返回时可能重新调度（不一定立即返回原调用程序）</td>
+<td>一定返回原调用点</td>
+</tr>
+<tr>
+<td>嵌套调用</td>
+<td>一般不允许（受限于内核栈等）</td>
+<td>允许嵌套</td>
+</tr>
+</tbody>
+</table>
+<p><strong>6. 内核态 vs 用户态</strong>：见第1章。内核态可执行全部指令、访问所有资源、可改处理器状态；用户态仅非特权指令。</p>
+<h3>四、公式与计算</h3>
+<p><strong>平均访问时间（二级存储）</strong>：设I级存取时间 T1、II级 T2，命中率 p，则</p>
+<pre><code>EAT = p·T1 + (1−p)·(T1 + T2)
+</code></pre>
+<p>课件例：T1=0.1μs（1KB），T2=1μs（1MB），命中率95%：</p>
+<pre><code>EAT = 0.95×0.1 + 0.05×(0.1+1) = 0.15μs
+</code></pre>
+<p>结论：结果非常接近I级存储的存取时间——层次结构靠高命中率逼近高速级性能。</p>
+<hr>
+<h2 id="sec-3">第3章 进程线程模型</h2>
+<h3>一、知识框架</h3>
+<ul class="tree"><li>3.1 进程基本概念：定义 → 与程序的关系 → 可再入程序 → 特征 → 三/五/七状态模型 → PCB → 队列</li><li>3.2 进程控制：原语（创建/撤消/阻塞/唤醒/挂起/激活/改优先级）→ Linux系统调用（fork/exec/wait/exit/getpid/sleep/nice）</li><li>3.3 线程：引入原因 → 定义与属性 → 组成 → 与进程的关系 → 好处</li><li>3.4 线程实现：用户级 / 核心级 / 混合 → Pthread → 协程</li></ul>
+<p class="xlink"><span class="xlink-tag">跨章联想</span>三状态中“就绪→运行”就是第4章的低级调度，“运行→就绪（时间片完）”就是时间片轮转；线程是调度单位，直接对应第4章多处理器线程调度。 <a href="#sec-5">见「跨章联想记忆」</a></p><h3>二、必须掌握的概念与定义</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>定义/要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>进程</td>
+<td>具有一定独立功能的程序在某个数据集合上的<strong>一次运行活动</strong>，是系统进行<strong>资源分配和调度</strong>的一个独立单位</td>
+</tr>
+<tr>
+<td>系统进程/用户进程</td>
+<td>系统进程执行OS程序；用户进程运行用户程序；系统进程优先级通常高于一般用户进程</td>
+</tr>
+<tr>
+<td>进程的组成</td>
+<td><strong>程序 + 数据 + 进程控制块（PCB）</strong> 三部分</td>
+</tr>
+<tr>
+<td>进程与程序的联系</td>
+<td>程序是进程的组成部分之一；进程运行目标是执行对应程序；进程由程序、数据、PCB组成</td>
+</tr>
+<tr>
+<td>进程与程序的区别</td>
+<td>程序静态、进程动态；进程是程序的一个执行过程；程序存在永久，进程有生命周期；一个程序可产生多个进程</td>
+</tr>
+<tr>
+<td>可再入程序</td>
+<td>能被多个用户同时调用，执行中<strong>不修改自身代码</strong>的程序；并非任何程序都能产生多个进程</td>
+</tr>
+<tr>
+<td>进程两个基本属性</td>
+<td>可拥有资源的独立单位；可独立调度和分派的基本单位</td>
+</tr>
+<tr>
+<td>进程特征（6条）</td>
+<td>并发性、动态性、独立性、交往性、异步性、结构性</td>
+</tr>
+<tr>
+<td>PCB</td>
+<td>描述进程基本情况及运行变化过程；<strong>进程存在的唯一标志</strong>；创建进程时设置PCB，撤消时收回PCB，进程随之消亡</td>
+</tr>
+<tr>
+<td>原语</td>
+<td>若干条指令组成、实现特定功能的指令序列；连续、不可分割、执行不可间断；<strong>必须在管态下执行且常驻内存</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>进程状态模型</strong></p>
+<ul>
+<li><strong>三状态</strong>：运行（Running，已获CPU并执行）、就绪（Ready，具备运行条件但未获CPU）、阻塞（Blocked，因等待某事件暂不能运行）。</li>
+<li><strong>五状态</strong>：在运行/就绪/阻塞之外增加<strong>创建（New）</strong>（正在创建、尚不能运行）和<strong>结束（Exit）</strong>（已结束运行，回收除PCB外资源，供其他进程从PCB收集信息）。</li>
+<li><strong>七状态</strong>：五状态未区分地址空间在内存还是外存，增加<strong>就绪挂起（Ready, suspend）</strong>（在外存，进入内存即可运行）与<strong>阻塞挂起（Blocked, suspend）</strong>（在外存并等待事件）。低优先级进程对换至外存的好处：提高处理器效率、为运行进程提供足够内存、有利于调试。</li>
+</ul>
+<p><strong>状态转换</strong></p>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>转换</th>
+<th>触发条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>三状态</td>
+<td>就绪→运行</td>
+<td>进程调度程序把处理机分配给某就绪进程</td>
+</tr>
+<tr>
+<td></td>
+<td>运行→就绪</td>
+<td>规定的时间片用完</td>
+</tr>
+<tr>
+<td></td>
+<td>运行→阻塞</td>
+<td>运行进程等待其他资源（事件）</td>
+</tr>
+<tr>
+<td></td>
+<td>阻塞→就绪</td>
+<td>阻塞原因（事件）获得</td>
+</tr>
+<tr>
+<td>五状态</td>
+<td>创建→就绪</td>
+<td>提交（Admit），完成创建</td>
+</tr>
+<tr>
+<td></td>
+<td>就绪→运行</td>
+<td>调度运行（Dispatch）</td>
+</tr>
+<tr>
+<td></td>
+<td>运行→就绪</td>
+<td>超时（Timeout），时间片用完</td>
+</tr>
+<tr>
+<td></td>
+<td>运行→阻塞</td>
+<td>事件等待（Event Wait）</td>
+</tr>
+<tr>
+<td></td>
+<td>阻塞→就绪</td>
+<td>事件出现（Event Occurs）</td>
+</tr>
+<tr>
+<td></td>
+<td>运行→结束</td>
+<td>释放（Release），进程终止</td>
+</tr>
+<tr>
+<td>七状态</td>
+<td>运行/就绪/阻塞 → 就绪挂起/阻塞挂起</td>
+<td>挂起（Suspend），内存→外存（含运行→就绪挂起）</td>
+</tr>
+<tr>
+<td></td>
+<td>就绪挂起→就绪、阻塞挂起→阻塞</td>
+<td>激活（Activate），外存→内存</td>
+</tr>
+<tr>
+<td></td>
+<td>阻塞→就绪、阻塞挂起→就绪挂起</td>
+<td>事件出现</td>
+</tr>
+<tr>
+<td></td>
+<td>创建→就绪/就绪挂起</td>
+<td>提交（Admit）</td>
+</tr>
+</tbody>
+</table>
+<div class="svg-wrap">
+<svg viewBox="0 0 780 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="三状态进程模型">
+  <defs>
+    <marker id="a1" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 Z" fill="#2c5f84"/>
+    </marker>
+  </defs>
+  <rect x="60" y="60" width="120" height="52" rx="10" fill="#e8f3fb" stroke="#2c6f9e" stroke-width="1.6"/>
+  <text x="120" y="93" text-anchor="middle" font-size="14" fill="#123a58" font-family="Microsoft YaHei, PingFang SC, sans-serif">就绪</text>
+  <rect x="330" y="60" width="120" height="52" rx="10" fill="#e6f6ef" stroke="#0f766e" stroke-width="1.6"/>
+  <text x="390" y="93" text-anchor="middle" font-size="14" fill="#0b4f46" font-family="Microsoft YaHei, PingFang SC, sans-serif">运行</text>
+  <rect x="600" y="60" width="120" height="52" rx="10" fill="#fdf1e3" stroke="#b4702a" stroke-width="1.6"/>
+  <text x="660" y="93" text-anchor="middle" font-size="14" fill="#6d4116" font-family="Microsoft YaHei, PingFang SC, sans-serif">阻塞</text>
+
+  <path d="M180,72 Q255,32 330,72" fill="none" stroke="#2c5f84" stroke-width="1.8" marker-end="url(#a1)"/>
+  <text x="255" y="26" text-anchor="middle" font-size="12" fill="#2c5f84" font-family="Microsoft YaHei, PingFang SC, sans-serif">① 调度</text>
+
+  <path d="M330,104 Q255,144 180,104" fill="none" stroke="#2c5f84" stroke-width="1.8" marker-end="url(#a1)"/>
+  <text x="255" y="166" text-anchor="middle" font-size="12" fill="#2c5f84" font-family="Microsoft YaHei, PingFang SC, sans-serif">② 时间片用完</text>
+
+  <path d="M450,72 Q525,32 600,72" fill="none" stroke="#2c5f84" stroke-width="1.8" marker-end="url(#a1)"/>
+  <text x="525" y="26" text-anchor="middle" font-size="12" fill="#2c5f84" font-family="Microsoft YaHei, PingFang SC, sans-serif">③ 等待资源/事件</text>
+
+  <path d="M660,112 L660,255 L120,255 L120,112" fill="none" stroke="#2c5f84" stroke-width="1.8" marker-end="url(#a1)"/>
+  <text x="390" y="280" text-anchor="middle" font-size="12" fill="#2c5f84" font-family="Microsoft YaHei, PingFang SC, sans-serif">④ 事件发生（唤醒）</text>
+</svg>
+<div class="caption">图1 三状态进程模型及四种转换（课件：就绪→运行、运行→就绪、运行→阻塞、阻塞→就绪）</div>
+</div>
+
+<div class="svg-wrap">
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="五状态进程模型">
+  <defs>
+    <marker id="a2" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 Z" fill="#2c5f84"/>
+    </marker>
+  </defs>
+  <rect x="25" y="45" width="110" height="48" rx="10" fill="#eef1f5" stroke="#6b7c8f" stroke-width="1.6"/>
+  <text x="80" y="76" text-anchor="middle" font-size="14" fill="#33475b" font-family="Microsoft YaHei, PingFang SC, sans-serif">创建</text>
+  <rect x="225" y="45" width="110" height="48" rx="10" fill="#e8f3fb" stroke="#2c6f9e" stroke-width="1.6"/>
+  <text x="280" y="76" text-anchor="middle" font-size="14" fill="#123a58" font-family="Microsoft YaHei, PingFang SC, sans-serif">就绪</text>
+  <rect x="425" y="45" width="110" height="48" rx="10" fill="#e6f6ef" stroke="#0f766e" stroke-width="1.6"/>
+  <text x="480" y="76" text-anchor="middle" font-size="14" fill="#0b4f46" font-family="Microsoft YaHei, PingFang SC, sans-serif">运行</text>
+  <rect x="635" y="45" width="110" height="48" rx="10" fill="#f2f2f4" stroke="#7a7f87" stroke-width="1.6"/>
+  <text x="690" y="76" text-anchor="middle" font-size="14" fill="#3b4048" font-family="Microsoft YaHei, PingFang SC, sans-serif">结束</text>
+  <rect x="425" y="195" width="110" height="48" rx="10" fill="#fdf1e3" stroke="#b4702a" stroke-width="1.6"/>
+  <text x="480" y="226" text-anchor="middle" font-size="14" fill="#6d4116" font-family="Microsoft YaHei, PingFang SC, sans-serif">阻塞</text>
+
+  <path d="M135,69 L225,69" fill="none" stroke="#2c5f84" stroke-width="1.8" marker-end="url(#a2)"/>
+  <text x="180" y="60" text-anchor="middle" font-size="12" fill="#2c5f84" font-family="Microsoft YaHei, PingFang SC, sans-serif">提交</text>
+
+  <path d="M335,69 L425,69" fill="none" stroke="#2c5f84" stroke-width="1.8" marker-end="url(#a2)"/>
+  <text x="380" y="60" text-anchor="middle" font-size="12" fill="#2c5f84" font-family="Microsoft YaHei, PingFang SC, sans-serif">调度</text>
+
+  <path d="M535,69 L635,69" fill="none" stroke="#2c5f84" stroke-width="1.8" marker-end="url(#a2)"/>
+  <text x="585" y="60" text-anchor="middle" font-size="12" fill="#2c5f84" font-family="Microsoft YaHei, PingFang SC, sans-serif">释放</text>
+
+  <path d="M425,58 Q380,18 335,58" fill="none" stroke="#2c5f84" stroke-width="1.8" marker-end="url(#a2)"/>
+  <text x="380" y="16" text-anchor="middle" font-size="12" fill="#2c5f84" font-family="Microsoft YaHei, PingFang SC, sans-serif">超时</text>
+
+  <path d="M480,93 L480,195" fill="none" stroke="#2c5f84" stroke-width="1.8" marker-end="url(#a2)"/>
+  <text x="492" y="145" text-anchor="start" font-size="12" fill="#2c5f84" font-family="Microsoft YaHei, PingFang SC, sans-serif">事件等待</text>
+
+  <path d="M425,219 L280,219 L280,93" fill="none" stroke="#2c5f84" stroke-width="1.8" marker-end="url(#a2)"/>
+  <text x="355" y="242" text-anchor="middle" font-size="12" fill="#2c5f84" font-family="Microsoft YaHei, PingFang SC, sans-serif">事件出现</text>
+</svg>
+<div class="caption">图2 五状态进程模型（在三状态基础上增加创建与结束；另有七状态模型增加就绪挂起/阻塞挂起）</div>
+</div>
+
+<p><strong>PCB 内容与组织</strong></p>
+<ul>
+<li>内容两大类：<strong>调度信息</strong>（供调度使用、描述当前状况：进程名、进程号、存储信息、优先级、当前状态、资源清单、"家族"关系、消息队列指针、进程队列指针、当前打开文件等）；<strong>现场信息</strong>（刻画运行情况：PSW、时钟、界地址寄存器等；中断进程时必须把中断时刻内容记入现场信息）。</li>
+<li>组织方式：<strong>线性方式</strong>（所有PCB不分状态组织在PCB表，优点简单无额外开销，缺点需扫描全表）；<strong>索引方式</strong>（相同状态的进程分别设PCB索引表）；<strong>链接方式</strong>（同状态PCB用链接字构成队列，链接字指出下一PCB编号/地址，编号0表示队尾，队首由内存固定单元中的队列指针指示）。</li>
+<li>进程队列：就绪队列（所有就绪进程）、等待队列（每种等待事件一个）、运行队列（单CPU系统整个系统一个）。</li>
+<li>队列组成：单向链接（前一PCB指针指向下一PCB，末尾置0）；双向链接（前向+后向指针，队首指针指出首/末PCB以便双向搜索）。</li>
+</ul>
+<p><strong>进程控制原语</strong>（创建、撤消、挂起、激活、阻塞、唤醒、改变优先级）</p>
+<table>
+<thead>
+<tr>
+<th>原语</th>
+<th>动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>创建</td>
+<td>建立PCB，产生新进程（父进程→子进程）</td>
+</tr>
+<tr>
+<td>撤消</td>
+<td>撤消PCB，撤消其一切"子孙进程"，释放全部资源</td>
+</tr>
+<tr>
+<td>阻塞</td>
+<td>运行→阻塞：中断CPU执行，把CPU当前状态存入PCB现场信息，状态置等待并插入该事件等待队列</td>
+</tr>
+<tr>
+<td>唤醒</td>
+<td>等待→就绪：从等待队列撤出，插入就绪队列等待调度</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Linux 进程控制系统调用</strong></p>
+<table>
+<thead>
+<tr>
+<th>调用</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fork</td>
+<td>创建一个子进程</td>
+</tr>
+<tr>
+<td>getpid</td>
+<td>返回当前进程PID</td>
+</tr>
+<tr>
+<td>exec</td>
+<td>更换进程映像（按指定文件名找到可执行文件并取代调用进程内容）</td>
+</tr>
+<tr>
+<td>exit</td>
+<td>终止调用程序（用于运行出错）</td>
+</tr>
+<tr>
+<td>wait</td>
+<td>等待任何要僵死的子进程</td>
+</tr>
+<tr>
+<td>sleep</td>
+<td>使进程挂起指定时间</td>
+</tr>
+<tr>
+<td>nice</td>
+<td>改变进程优先级</td>
+</tr>
+</tbody>
+</table>
+<p>fork 返回值要点：失败返回 &lt;0；<strong>子进程中返回0</strong>；父进程返回子进程PID。父进程先终止时，子进程的父进程被系统指定为 <strong>init 进程（PID=1）</strong>。fork 后父子进程<strong>并发执行</strong>。</p>
+<p><strong>线程</strong></p>
+<ul>
+<li>引入原因：进程活动存在时间与空间开销，数目不宜太多、切换不宜过频；为使多程序更好并发、减少系统开销，需<strong>把调度/分派的基本单位与独立分配资源的基本单位分离</strong>（调度单位不负责分配资源，拥有资源的单位不频繁切换）。</li>
+<li>定义：进程中的一个实体，是<strong>CPU调度和分派的基本单位</strong>；只拥有少量运行中必不可少的资源；同属一个进程的其他线程<strong>共享该进程全部资源</strong>；有就绪、等待、运行三种基本状态，有的系统还有终止状态。</li>
+<li>属性：①唯一标识符+线程描述表（记录寄存器、栈等现场状态）；②不同线程可执行相同程序；③同进程各线程共享该进程内存地址空间；④线程是处理器独立调度单位、可并发；⑤生命周期内经历等待/就绪/运行等状态变化。每个线程单独占CPU资源，<strong>只有在多核CPU上多线程才可能并行执行</strong>。</li>
+<li>组成（thread结构/线程控制块）四部分：①唯一线程标识符；②描述处理器工作情况的一组寄存器内容（PC、状态寄存器、通用寄存器等）；③<strong>两个栈指针</strong>（分别指向核心栈与用户栈）；④一个私有存储区（存放现场保护信息与相关统计信息）。</li>
+<li>引入好处：创建线程时间少；线程切换时间少；同进程内线程共享内存与文件，通信更简便、传送更快；线程能独立执行，充分利用处理器与外设并行能力。</li>
+</ul>
+<h3>三、易混 / 易考对比点</h3>
+<p><strong>1. 进程 vs 线程（课件对照表）</strong></p>
+<table>
+<thead>
+<tr>
+<th>比较概念</th>
+<th>线程</th>
+<th>进程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基本功能</td>
+<td>调度的基本单位</td>
+<td>资源分配的基本单位</td>
+</tr>
+<tr>
+<td>系统开销</td>
+<td>切换开销小</td>
+<td>切换开销大</td>
+</tr>
+<tr>
+<td>资源分配</td>
+<td>线程共享一个进程下的资源</td>
+<td>进程独占资源</td>
+</tr>
+<tr>
+<td>通信方式</td>
+<td>共享内存地址空间</td>
+<td>使用进程通信的系统调用</td>
+</tr>
+<tr>
+<td>并发性</td>
+<td>更强</td>
+<td>更弱</td>
+</tr>
+</tbody>
+</table>
+<p>补充：线程又称<strong>轻量级进程/进程元</strong>，传统进程称<strong>重量级进程</strong>；引入线程后，线程是调度分派基本单位、进程是资源拥有基本单位；但无论是否引入线程，进程都是拥有资源的独立单位；创建/撤消进程开销显著大于线程，进程切换开销远大于线程切换。</p>
+<p><strong>2. 用户级线程 vs 核心级线程 vs 混合</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>用户级线程</th>
+<th>核心级线程</th>
+<th>混合方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>依赖内核</td>
+<td>不依赖</td>
+<td>依赖</td>
+<td>两者结合</td>
+</tr>
+<tr>
+<td>管理</td>
+<td>创建/撤消/切换不用系统调用，全由应用程序管理；每进程有私有线程表；核心空间有进程表</td>
+<td>创建/撤消/切换由核心实现；核心保留线程控制块感知线程；线程表在核心空间</td>
+<td>线程创建在用户空间，调度等在核心态</td>
+</tr>
+<tr>
+<td>优点</td>
+<td>切换快；可用自定义调度算法；可运行在任何OS上</td>
+<td>核心可同时调度同进程多个线程、真正并行；某线程阻塞可调度同进程另一线程；核心线程本身可多线程</td>
+<td>同进程多线程可在多处理器并行；阻塞式系统调用不必阻塞整个进程</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>一个线程系统调用会使同进程所有线程阻塞；多线程应用不具多处理器优点</td>
+<td>控制转移开销大；应用进程无法影响线程切换</td>
+<td>（课件未展开）</td>
+</tr>
+</tbody>
+</table>
+<p>比较三条：①切换速度：用户级更快；②系统调用：用户级把系统调用看作整个进程的行为，核心级调度以线程为单位；③执行时间/调度单位：用户级以进程为单位调度，核心级以线程为单位调度。</p>
+<p><strong>3. 协程</strong>：线程数量很多时占用大量内存、切换占用大量系统时间，故引入协程——运行在线程之上的<strong>轻量级线程</strong>，一个协程执行完让另一协程运行在当前线程上；并未增加线程数量，只是在线程基础上<strong>分时复用</strong>多个协程；切换在<strong>用户态</strong>完成，代价远小于线程用户态↔内核态切换。</p>
+<p><strong>4. 三/五/七状态</strong>：三状态只覆盖运行中的进程；五状态补上创建与结束；七状态补上"内存/外存"维度（就绪挂起、阻塞挂起）。</p>
+<h3>四、Pthread 与编程要点</h3>
+<ul>
+<li>多线程应用用用户级程序库编写，把所有线程映射到单个内核级进程；最著名为 <strong>Pthread（POSIX thread）</strong> 库。</li>
+<li>线程共性：一个标识符、一组寄存器（含PC）、一组存放在结构中的属性（栈大小、调度参数等）。</li>
+<li>主要函数：<code>pthread_create()</code> 创建；<code>pthread_join()</code> 等待特定线程退出；<code>pthread_exit()</code> 结束调用线程；<code>pthread_yield()</code> 释放CPU给另一线程；<code>pthread_attr_init()</code> 创建并初始化线程属性；<code>pthread_attr_destroy()</code> 删除属性结构。</li>
+<li>例程要点：主程序循环创建多个线程，创建失败打印错误并退出；各线程输出交错的顺序不确定，且连续运行也可能变化（体现并发的不确定性）。</li>
+</ul>
+<hr>
+<h2 id="sec-4">第4章 进程线程调度</h2>
+<h3>一、知识框架</h3>
+<ul class="tree"><li>4.1 基本概念：定义(低级调度) → 功能 → 时机 → 两级/三级调度模型</li><li>4.2 设计思路：策略选择(6) → 性能指标(5)</li><li>4.3 经典算法：FCFS → RR → 优先级 → SJF → SRTF → 多级队列 → 多级反馈队列</li><li>4.4 其他算法：公平共享 → 保证调度 → 彩票调度</li><li>4.5 实例：BSD多级反馈 → UNIX SVR4 → Linux → Windows</li><li>4.6 多处理器调度：粒度 → 设计问题 → 进程调度 → 线程调度</li><li>4.7 实时调度：四类方法 → 限期调度 → RMS → 优先级逆转与继承</li></ul>
+<p class="xlink"><span class="xlink-tag">跨章联想</span>调度算法操作的“就绪队列”来自第3章的 PCB 链接方式；“时间片”来自第1章分时系统；抢占的驱动力来自第2章时钟中断。 <a href="#sec-5">见「跨章联想记忆」</a></p><h3>二、必须掌握的概念与定义</h3>
+<ul>
+<li><strong>进程调度</strong>：即处理机调度，任务是控制、协调进程对CPU的竞争，按一定调度算法使某一就绪进程获得CPU控制权并转为运行状态；也叫<strong>低级调度</strong>。进程调度程序是OS的真正核心，直接负责CPU分配，是各进程的"切换开关"。</li>
+<li><strong>主要功能</strong>：①保存现场 ②挑选进程 ③恢复现场。</li>
+<li><strong>调度时机</strong>：①创建进程 ②任务完成 ③等待资源 ④中断发生 ⑤运行到时。</li>
+<li><strong>两级/三级调度模型</strong>：课件仅给出简化队列示意图（作业级/进程级等），未配文字说明，见文末说明。</li>
+<li><strong>调度策略选择考虑</strong>：设计目标、公平性、均衡性、统筹兼顾、优先级、开销。</li>
+<li><strong>性能评价标准（5项）</strong>：CPU利用率、吞吐量、周转时间、就绪等待时间、响应时间。</li>
+<li><strong>计算定义</strong>：周转时间 = 完成时间 − 到达时间；带权周转时间 = 周转时间 / 运行时间。</li>
+</ul>
+<h3>三、经典调度算法（含义、特点、计算）</h3>
+<p><strong>1. 先来先服务 FCFS</strong>：最简单。作业调度取后备队列队头作业调入内存建进程入就绪队列；进程调度取就绪队列中最先进入者，直到完成或阻塞，新进程PCB链入队尾。
+- 有利于<strong>长作业</strong>，不利于短作业（短作业等待久→带权周转时间长）；有利于<strong>CPU繁忙型</strong>作业，不利于I/O繁忙型；易实现但效率较低。</p>
+<p>课件算例（作业依次到达、相差1个时间单位）：</p>
+<table>
+<thead>
+<tr>
+<th>作业</th>
+<th>到达</th>
+<th>运行</th>
+<th>开始</th>
+<th>完成</th>
+<th>周转</th>
+<th>带权周转</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>24</td>
+<td>0</td>
+<td>24</td>
+<td>24</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>3</td>
+<td>24</td>
+<td>27</td>
+<td>26</td>
+<td>8.67</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>27</td>
+<td>30</td>
+<td>28</td>
+<td>9.33</td>
+</tr>
+</tbody>
+</table>
+<p>平均周转时间 = <strong>26</strong>，平均带权周转时间 = <strong>6.33</strong>。</p>
+<p><strong>2. 时间片轮转 RR</strong>：主要用于分时系统。进程用完时间片后时钟中断，调度程序停止其运行并放回就绪队列末尾，CPU给队首进程，如此往复。
+- 时间片太长→退化为FCFS、响应时间加长；太短→切换频繁、系统开销增加。
+- 时间片长短由四因素确定：系统响应时间、就绪队列进程数目、进程转换时间、CPU运行指令速度。</p>
+<p>课件算例（四进程 A/B/C/D，到达均为0，运行 12/5/3/6）：</p>
+<table>
+<thead>
+<tr>
+<th>时间片</th>
+<th>进程</th>
+<th>开始</th>
+<th>完成</th>
+<th>周转</th>
+<th>带权周转</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>q=1</td>
+<td>A</td>
+<td>0</td>
+<td>26</td>
+<td>26</td>
+<td>2.17</td>
+</tr>
+<tr>
+<td></td>
+<td>B</td>
+<td>1</td>
+<td>17</td>
+<td>17</td>
+<td>3.4</td>
+</tr>
+<tr>
+<td></td>
+<td>C</td>
+<td>2</td>
+<td>11</td>
+<td>11</td>
+<td>3.67</td>
+</tr>
+<tr>
+<td></td>
+<td>D</td>
+<td>3</td>
+<td>20</td>
+<td>20</td>
+<td>3.33</td>
+</tr>
+<tr>
+<td><strong>q=1 合计</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td>平均周转 <strong>18.5</strong></td>
+<td>平均带权 <strong>3.14</strong></td>
+</tr>
+<tr>
+<td>q=4</td>
+<td>A</td>
+<td>0</td>
+<td>26</td>
+<td>26</td>
+<td>2.17</td>
+</tr>
+<tr>
+<td></td>
+<td>B</td>
+<td>4</td>
+<td>20</td>
+<td>20</td>
+<td>4</td>
+</tr>
+<tr>
+<td></td>
+<td>C</td>
+<td>8</td>
+<td>11</td>
+<td>11</td>
+<td>3.67</td>
+</tr>
+<tr>
+<td></td>
+<td>D</td>
+<td>11</td>
+<td>22</td>
+<td>22</td>
+<td>3.67</td>
+</tr>
+<tr>
+<td><strong>q=4 合计</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td>平均周转 <strong>19.75</strong></td>
+<td>平均带权 <strong>3.38</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>3. 优先级法</strong>：从就绪队列选优先级最高者，分给CPU。按新进程出现时是否让出CPU分<strong>非抢占式</strong>与<strong>抢占式</strong>。优先级确定：内部（用可度量的量）/外部（按OS以外标准）；静态（创建时确定、全程不变）/动态（随进程推进而变）。</p>
+<p>课件算例（优先数：P4=5、P3=4、P1=3、P5=2、P2=1；运行时间 10/1/2/1/5）：执行顺序为 <strong>P4 → P3 → P1 → P5 → P2</strong>（按优先数越大越优先理解）。</p>
+<p><strong>4. 短作业优先 SJF</strong>：从后备队列挑运行时间最短的作业入内存；能有效降低平均等待时间、提高吞吐量；对长作业不利，且不能保证紧迫作业及时处理。</p>
+<p><strong>5. 最短剩余时间优先 SRTF</strong>：SJF 的变形，采用<strong>抢占式</strong>策略。</p>
+<p><strong>6. 多级队列</strong>：按作业特性（占用内存大小、作业类型等）<strong>永久性</strong>把作业链入不同队列；每队列有自己的调度算法；队列之间也要调度，通常用<strong>固定优先级的抢占式调度</strong>。</p>
+<p><strong>7. 多级反馈队列</strong>（在多级队列基础上加"反馈"）：
+- 设多个就绪队列，各有优先级，第一队列最高、依次降低；
+- 高优先级队列时间片小、低优先级队列时间片大（如从高到低依次加倍）；
+- 新进程入第一队列末尾，各队列按 FCFS 排队；
+- 进程在时间片内未完成则转到下一级队列末尾；
+- 先运行第一队列，空后才运行第二队列，依次类推；
+- <strong>最后一个（最低级）队列采用时间片轮转</strong>。
+- 较复杂但性能较好；UNIX、Windows NT、OS/2 采用类似算法。</p>
+<h3>四、其他算法与系统实例</h3>
+<ul>
+<li><strong>公平共享调度</strong>：传统算法把就绪进程集合视为单一（同构）进程池；多用户系统中按用户/用户组分配权值，权值定义资源占用比例（如A权值为B的2倍，则长期来看A完成工作是B的2倍）；目标是监视使用情况，对超额占用者少分配、对占用不足者多分配。</li>
+<li><strong>保证调度</strong>：目标是保证每个进程享用CPU时间完全一样（n个进程各1/n）；关键是"保障"1/n而非"大概"1/n，不一定要靠轮转，每次时间片不必相同。</li>
+<li><strong>彩票调度</strong>：概率调度算法。给每进程发一定数量彩票，调度器随机抽一张，持有者获CPU；多发彩票→更多CPU时间；给每进程至少一张即可<strong>防止饥饿</strong>（获得CPU概率大于0）。</li>
+<li><strong>BSD UNIX 多级反馈队列</strong>：面向分时交互，兼顾响应时间与低优先级后台作业不饿死；每个优先级队列内采用轮转；每秒重算每个进程优先级并重新调度；参数 CPUj(i)（进程j在区间i的处理器使用度量）、Pj(i)（区间i开始处优先级，<strong>值越小优先级越高</strong>）、Basej（基本优先级）、nicej（用户可控调节因子）；CPU与nice组件被限制以防进程迁出指定优先级区。</li>
+<li><strong>UNIX SVR4</strong>：实时进程最高、内核模式进程次之、分时（其他用户模式）进程最低。两项重要修改：①增加可抢占的静态优先级调度器，160种优先级划为三类；②插入<strong>可抢占点</strong>（内核在安全位置可中断处理并调度新进程；安全位置=内核数据结构已更新且一致或已被信号量锁定的代码区域）。</li>
+<li>优先级三类：<strong>实时 159~100</strong>（先于任何内核/分时进程运行，可在可抢占点抢占内核与用户进程）、<strong>内核 99~66</strong>（先于分时进程、服从实时进程）、<strong>分时 59~0</strong>（最低）。</li>
+<li>每优先级一个调度队列，同优先级按循环方式执行；位映像向量 dqactmap 每位对应一优先级，队列非空则置1；进程离开运行态时调度器查表，从最高非空队列调度；到可抢占点时内核检查 kprunrun 标记，若有实时进程就绪且当前优先级更低则抢占。</li>
+<li>分时类优先级可变：用完时间片降优先级、因事件/资源阻塞则升优先级；时间量按优先级分配（优先级0为100ms → 优先级59为50ms）；实时进程优先级与时间量固定。</li>
+<li><strong>Linux 抢占式调度</strong>：基本采用"抢占式优先级"，继承UNIX以优先级为基础的调度；三种策略 <strong>SCHED_FIFO、SCHED_RR、SCHED_OTHER</strong>；</li>
+<li>调度时机：①调用 nanosleep()/pause() 主动让出CPU；②进程终止放弃CPU；③时钟中断处理发现当前进程连续运行过长；④唤醒睡眠进程时发现其更有资格运行；⑤系统调用改变调度策略或降低自身优先级（如nice）引起立即调度；</li>
+<li>算法：在就绪队列中选优先级最高且在内存的进程；有实时进程则实时优先；若选中的不是当前进程，保存当前进程现场（PC、CPU寄存器等一切机器状态）并恢复选中者现场。</li>
+<li><strong>Windows</strong>：可抢占调度器，灵活优先级系统，每级含轮转，某些级优先级可随线程活动动态变化；优先级分<strong>实时</strong>与<strong>可变</strong>两段；实时类中优先级固定不变、同优先级活动线程在同一轮转队列；可变类中优先级初始指定、生命周期内可升可降。</li>
+</ul>
+<h3>五、多处理器调度（要点式）</h3>
+<ul>
+<li>三类多处理器环境：松耦合/分布式多处理器/集群；专门功能的处理器；紧耦合多处理。</li>
+<li><strong>粒度</strong>三件事：把进程分配到处理器；在单个处理器上使用多道程序设计；一个进程的实际分派。</li>
+<li>设计问题涉及并行性层次：无约束并行性、粗粒度与非常粗粒度、中等粒度、细粒度。</li>
+<li>静态分配缺点：某处理器可能空闲；调度进程的开销与调到哪个处理器无关。</li>
+<li>主从式分配的两个缺点：主处理器失败导致整个系统失败；主处理器可能成为性能瓶颈。</li>
+<li>进程调度：多数传统多处理器系统中进程不指定专门处理器；可以是单队列，也可以多条基于优先级的队列送入同一处理器池，系统可看作<strong>多服务器排队结构</strong>。</li>
+<li>线程调度：单处理器中线程可重叠I/O、切换代价远小于进程；多处理器中线程可开发真正并行性。</li>
+<li>四种方式：<strong>加载共享、组调度、专用处理器分配、动态调度</strong>。</li>
+<li>分配方案要点：负载均匀、不需要集中调度器、可使用基于优先级方案、FCFS、最少线程数优先、可抢占的最少线程数优先。</li>
+<li><strong>加载共享的缺点</strong>：中心队列占据须互斥访问的存储区；被抢占线程可能不在同一处理器恢复；线程间需高度合作时进程切换严重影响性能。</li>
+</ul>
+<h3>六、实时调度（要点式）</h3>
+<ul>
+<li><strong>实时调度方法（四类）</strong>：静态表驱动法、静态优先级驱动抢占法、基于动态规划调度法、动态尽力调度法。</li>
+<li>静态表驱动适用于<strong>周期性任务</strong>；静态优先级驱动抢占与大多数非实时多道程序系统中的优先级驱动抢占机制相同；基于动态规划调度在任务到达未执行时试图创建包含前已调度任务与新任务的调度，若新任务能满足最后期限且当前任务也不错过后期限则修订调度。</li>
+<li><strong>限期调度的任务属性（7项）</strong>：就绪时间、启动最后期限、完成最后期限、处理时间、资源需求、优先级、子任务结构。抢占是重要设计问题；实时调度功能可分成"下一次调度哪个任务"与"允许哪种抢占"等维度。</li>
+<li><strong>速率单调调度 RMS</strong>：解决周期性任务多任务调度冲突的好方法；<strong>周期最短的任务优先级最高</strong>，周期次短者次之；多任务可执行时周期最短者先得到服务。</li>
+<li><strong>优先级逆转</strong>：在任何基于优先级的可抢占调度方案中都可能发生，在实时调度中关联特别大；系统应不停执行最高优先级任务。<strong>无界限优先级逆转</strong>：逆转持续时间不仅依赖处理共享资源的时间，还依赖其他不相关任务的不可预测行为。</li>
+<li><strong>优先级继承协议</strong>：优先级低的任务继承与它共享同一资源的优先级较高任务的优先级；高优先级任务在资源上阻塞时优先级立即更改，低优先级任务释放资源时该改变结束。</li>
+</ul>
+<h3>七、计算题模板</h3>
+<pre><code>周转时间 Ti = 完成时间 − 到达时间
+带权周转时间 Wi = Ti / 运行时间
+平均周转时间 = ΣTi / n
+平均带权周转时间 = ΣWi / n
+</code></pre>
+<p>做题顺序：画时间轴/甘特图 → 标各作业开始与完成 → 逐个算 Ti、Wi → 求平均。RR 注意时间片边界与新到达进程的入队位置；优先级法注意抢占式与否；SJF/SRTF 注意"到达时间"与"剩余时间"。</p>
+<hr>
+<h2 id="sec-6">附录A 课件表述差异（答题时按此处理）</h2>
+<ol>
+<li><strong>OS基本特征</strong>：正文列五条（并发性、共享性、虚拟性、异步性、随机性）；本章小结只提"并发、共享、随机三个主要特征"。答题以五条更完整；若题目问"三个主要特征"可按小结作答。</li>
+<li><strong>用户态→内核态的途径</strong>：第1章列三种（系统调用、异常、外围设备中断）；第2章表述为"唯一途径是通过中断"。二者实质一致——系统调用（访管/陷入）与异常都归入广义"中断"，答题时可写"通过中断（含系统调用引起的陷入与异常）"。</li>
+<li><strong>三状态中第三态名称</strong>：正文写"等待"，状态定义小节写"阻塞（Blocked）"，为同一状态。</li>
+</ol>
+<h2 id="sec-7">附录B 解析说明（课件中仅图示、无文字的部分）</h2>
+<ul>
+<li><strong>第4章 4.1.3 两级调度模型、4.1.4 三级调度模型</strong>：课件仅有"两级调度简化队列图""三级调度简化队列示意图"，无文字说明，故本提纲未展开其层级名称与流转关系，只保留标题位置。</li>
+<li><strong>第4章 4.3.1 FCFS、4.3.2 RR、4.3.3 优先级法</strong>：课件中的甘特图/执行顺序图是图片，过程图未能提取；但对应性能数据均在表格中给出，本提纲已完整采用表格数据（FCFS 平均周转26/带权6.33；RR q=1 为18.5/3.14、q=4 为19.75/3.38）。</li>
+<li><strong>第2章 2.3/2.4 部分结构图（多级存储、界地址寄存器、中断响应流程）</strong>：文字要点已提取，图形本身为图片，未逐图转录。</li>
+<li><strong>第4章 4.6 多处理器调度</strong>：课件以要点罗列为主，未给出算法推导或计算例题，本提纲按要点整理。</li>
+<li>其余各章文字内容提取完整（第1章75页、第2章102页、第3章55页、第4章77页）。</li>
+</ul>
+<h2 id="sec-8">附录C 高频自测题与参考答案（含作答区）</h2>
+<p class="tip">用法：先遮住“参考答案”，在“作答区”默写，再对照答案。标注<span class="flag">课件未支撑/说明</span>的题目，只按课件能支撑的范围作答或给出推断依据，不硬凑结论。题目取自各章课件课后复习题。</p>
+<h3>第1章 操作系统概述</h3>
+<div class="qa">
+<p class="q"><span class="num">1.</span>什么是计算机系统？由哪两部分构成？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>计算机系统是按用户的要求接收和存储信息、自动进行数据处理并输出结果信息的系统；由<b>硬件子系统</b>（计算机赖以工作的实体）和<b>软件子系统</b>（各种程序与数据，保证系统协调工作）两大部分构成。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">2.</span>什么是操作系统？说明其在计算机系统中的作用和地位。</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>操作系统是具有各种功能、由大量程序模块组成的集合：①有效组织和管理计算机的硬件及软件资源；②合理组织工作流程、控制程序执行（公平对待用户程序，避免死锁与饥饿）；③向用户和开发人员提供高效、方便的服务接口。<br>地位：属于<b>系统软件</b>，位于软件系统的最下层、紧贴硬件；它扩充硬件功能，为上层软件提供运行环境，是硬件与上层软件/用户之间的桥梁。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">3.</span>操作系统管理哪些资源？从资源管理角度说明其主要功能。</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>资源：处理器（CPU）、主存储器、外存储器、外部设备等硬件资源，以及程序、数据（文件）等软件资源。<br>对应五项功能：①进程（处理器）管理——进程控制、同步、通信、调度；②存储管理——内存分配回收、存储保护、内存扩充；③文件管理——存储空间管理、目录管理、安全性；④设备管理——外设分配、启动与故障处理；⑤作业管理——组织用户工作流程。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">4.</span>操作系统有哪些基本特征？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>正文列出五条：<b>并发性</b>（多个程序同时运行）、<b>共享性</b>（互斥共享与同时共享资源）、<b>虚拟性</b>（物理实体与逻辑对应物相互转化）、<b>异步性</b>（走走停停、以不可预知速度推进）、<b>随机性</b>（运行环境随机，不能事先假定程序行为与硬件情况）。<br>本章小结只归纳“并发、共享、随机”三个主要特征；答题按五条更完整（见附录A第1条）。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">5.</span>叙述各类操作系统的工作方式及特点。</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>①<b>批处理</b>：收一批作业组成作业流，监控程序自动转接、自动定序；资源利用率高、吞吐量大、流程自动化高，但用户不能直接交互，不适合调试；分简单批处理与多道批处理。<br>②<b>分时</b>：用户经终端交互提命令，系统按时间片轮转服务并回显结果；具有多路性、交互性、独占性、及时性。<br>③<b>实时</b>：在规定时间内响应外部事件并完成处理，控制实时设备与任务协调一致；分硬实时/软实时；需实时时钟管理、过载防护、高可靠性。<br>④<b>个人计算机</b>：单用户、图形界面、使用方便。<br>⑤<b>网络</b>：建立在各种计算机 OS 之上、按网络体系结构协议标准开发，统一配置网络资源；有集中式与分布式两种模式。<br>⑥<b>分布式</b>：所有主机使用统一 OS、资源深度共享、透明性、自治性，是网络 OS 的更高级形式。<br>⑦<b>嵌入式</b>：内核小、专用性强、系统精简、高实时性、多任务。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">6.</span>比较批处理、分时、实时系统的相同点与不同点。</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>相同点：都属于操作系统的基本类型；都要管理软硬件资源、组织作业或进程的运行，追求系统效率与资源利用率；都基于多道程序思想（分时、实时支持多用户使用）。<br>不同点：<table class="mini"><thead><tr><th>维度</th><th>批处理</th><th>分时</th><th>实时</th></tr></thead><tbody><tr><td>工作方式</td><td>成批输入、自动转接作业流</td><td>时间片轮转、终端交互</td><td>事件驱动、限时响应处理</td></tr><tr><td>交互性</td><td>无，不适合调试</td><td>强</td><td>弱（面向设备与事件）</td></tr><tr><td>追求目标</td><td>吞吐量、资源利用率</td><td>响应及时、各用户公平</td><td>在截止期限内完成、可靠</td></tr><tr><td>抢占性</td><td>—</td><td>课件表述为“不可抢占”</td><td>可抢占</td></tr><tr><td>典型指标</td><td>吞吐量、作业周转</td><td>响应时间</td><td>截止期限、超时后果</td></tr></tbody></table></div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">7.</span>什么情况下采用批处理方式？什么情况下考虑分时策略？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>批处理：作业量大、无需用户交互、可成批提交，追求吞吐量与资源利用率（如统计报表类成批作业）。<br>分时：多用户需同时使用一台机器、频繁发出简短命令、要求及时交互响应，以及需要调试程序时（课件：批处理方式不适合交互式作业）。<br><span class="flag">说明：</span>课件只给出两类系统的工作方式与特点、“批处理不适合交互式作业”的判断，未列具体应用清单，以上为按特点归类。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">8.</span>现代通用OS为何把批处理与分时结合？有何特点？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>原因：分时弥补批处理不能向用户提供交互式快速服务的缺点；批处理又能在分时系统 CPU 空闲时运行大的后台作业，兼顾交互性与吞吐量。<br>特点：处理原则是“<b>分时优先，批处理在后</b>”；分时运行状态称“前台”（响应需频繁交互的作业，如大量终端请求），批处理运行状态称“后台”（处理对时间性要求不强的作业）。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">9.</span>实时系统的主要特征是什么？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>在规定时间内及时响应外部事件请求、完成事件处理，并控制所有实时设备和实时任务协调一致工作；主要目标是在严格时间范围内对外部请求作出反应，并具备高可靠性。分<b>硬实时</b>（超时产生严重后果）与<b>软实时</b>（超时影响服务质量但不引发严重后果）。<br>应具备能力：①实时时钟管理（定时任务按严格间隔重复运行；延时任务非周期、可延后但有严格时间界限；主动式/从动式任务）；②过载防护（迅速判断并抛弃或延后次要任务，保证最重要任务）；③高可靠性。课件另列特点：高精度计时、多级中断、实时调度、<b>可抢占</b>。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">10.</span>应用场合选型：导弹控制、国家统计局软件、汽车发动机点火控制、火车订票系统、互联网电子游戏。</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>导弹控制——<b>硬实时</b>（超时后果严重）；国家统计局软件——<b>批处理</b>（成批数据处理、无需交互、追求吞吐）；汽车发动机点火控制——<b>硬实时</b>；火车订票系统——<b>实时</b>（联机事务处理，要求及时响应，按软实时/实时系统理解）；互联网电子游戏——<b>分时</b>（多用户交互、要求及时响应）。<br><span class="flag">说明：</span>课件未给本题标准答案。前三项可由硬实时/批处理特点直接判定；后两项属按“交互性、及时性”推断，若课程另有口径以老师讲解为准。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">11.</span>什么是SPOOLing技术？现代OS中是否使用？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>SPOOLing 即“假脱机”，全称“同时的外部设备联机操作”：借助<b>通道</b>技术，使输入输出操作与处理器动作自动并行处理。通道是专门控制输入输出的硬件设备（I/O 处理机），可自主控制外设、与 CPU 并行工作；假脱机技术为多道批处理系统中的多道程序设计提供了重要基础。<br>现代 OS 是否使用：<span class="flag">课件未说明</span>。课件只把它作为多道批处理的关键技术，未讨论其在现代系统中的具体应用。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">12.</span>网络OS与分布式OS的本质不同？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>网络操作系统可以架构在不同的本机操作系统之上，通过网络协议实现网络资源的统一配置；<br>分布式操作系统强调<b>单一操作系统</b>对整个分布式系统的统一管理与调度，无论本地还是异地资源都用同一方式管理与访问，用户不必关心资源的真正物理位置或存储方式。<br>分布式 OS 除具备网络 OS 功能外，还有四个特征：所有主机使用统一 OS、资源深度共享、透明性、自治性。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">13.</span>OS设计过程包括哪些方面？各方面考虑什么？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>分三部分（互相渗透、不能截然分开）：<br>①<b>功能设计</b>：根据设计目标与使用要求，确定系统应具备哪些功能以及操作系统的类型。<br>②<b>算法设计</b>：根据计算机性能与系统功能，选择并设计满足功能的算法和策略，分析、估算其效能。<br>③<b>结构设计</b>：按功能与特性要求选择合适结构，用相应结构设计方法把系统逐步分解、抽象、综合，使结构清晰、简明、可靠、易读、易修改、使用方便、适应性强。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">14.</span>OS开发面临的主要问题？设计目标是什么？影响正确性的因素有哪些？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>主要问题（三个困难）：①设计复杂程度高——程序长、接口信息多、动态性强、并行性强；②正确性难以保证——功能成分多、各种外部设备接口复杂；③研制周期长。<br>设计目标（六项）：可靠性（正确性＋健壮性）、高效性、易维护性（易读、易扩充、易剪裁、易修改）、可移植性、安全性、简明性。<br>影响正确性的因素：并发、共享以及随之带来的不确定性；系统须动态应付随时发生的内部与外部事件；大量功能成分与复杂外设接口使源代码正确性难以保证（依靠软件工程规范保证）。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">15.</span>结构设计应考虑哪些问题？说明模块组合法、层次式结构、客户/服务器结构的基本思想及优缺点。</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>应考虑：①<b>系统模块化</b>——模块是一组数据结构以及定义在其上的一组操作；②<b>模块标准化</b>——模块规格划一、遵循相同构造准则与构件标准，提炼基本成分并定型化；③<b>通信规范化</b>——模块间接口清晰划一、联系方式统一。<br>①<b>模块组合（整体式）</b>：总功能分解为子功能，每子功能实现为模块，按功能继续细分，接口连成整体。优点：结构紧密、接口简单直接、系统效率较高。缺点：模块转接随意、互相牵连、独立性差、结构不清晰；数据作全程量可被任意存取修改；常以大型表格为中心、采用全局封中断而限制并发。<br>②<b>层次式</b>：按功能流图调用次序分层，层间只允许单向依赖/单向调用，不构成循环。优点：组织与依赖关系清晰，可读性与可适应性好；下层正确即为上层提供可靠基础，可靠性高；增删一层不影响其他层；易调试、修改、扩充、维护、保证正确性。<br>③<b>微内核（客户/服务器）</b>：内核只保留所有 OS 都有的操作（线程调度、虚拟存储、消息传递、设备驱动、原语、中断处理），其余功能拆成运行在用户态的服务进程，以客户/服务器方式收发消息。优点：可靠（单个服务器失败不引起其他崩溃）、灵活（改服务不影响系统其他部分）、适于分布式处理。缺点：只能通过微内核通信，通信频繁时效率低。</div>
+</div>
+<h3>第2章 操作系统运行环境</h3>
+<div class="qa">
+<p class="q"><span class="num">1.</span>简述处理器组成与工作原理；哪些部分与OS密切相关，为什么？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>组成：<b>运算器</b>（算术与逻辑运算）、<b>控制器</b>（取指令、维护 CPU 状态、完成 CPU 与内存交互）、<b>寄存器</b>（暂存数据/地址/指令，访问最快、造价高、容量小）、<b>高速缓存</b>（匹配高速指令处理与低速内存访问，快于内存、慢于寄存器）。<br>原理：指令周期＝取指周期（从存储器读指令，PC 通常自增一个指令长度）＋执行周期（译码并执行）；程序由不断取指、执行组成，仅关机、出错或停机指令才停止。<br>与 OS 密切相关：①用户可见寄存器（数据、地址、条件码寄存器）；②控制与状态寄存器 PC、IR、PSW；③特权指令与处理器状态；④中断机制。原因：OS 依赖它们标识运行状态、保存/恢复现场、实现用户态↔内核态切换与存储保护。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">2.</span>现代处理器提供哪两种工作状态以隔离OS与普通程序？各有什么特点？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span><b>内核态</b>（又称管态、特权态、系统态、核心态）：可执行全部指令（包括特权指令）、可使用所有资源、具有改变处理器状态的能力。<br><b>用户态</b>（又称目态、普通态）：只能执行非特权指令，不能访问受保护资源。<br>关系：特权级别越高，可运行的指令集合越大，且高特权级的指令集合包含低特权级的集合。x86 提供 R0–R3 四个特权环，R0 相当于内核态、R3 相当于用户态，现有 UNIX/Linux/Windows 多用 R0 与 R3。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">3.</span>什么情况下OS程序才能占用CPU？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>处理器处于内核态时，执行的是 OS 程序。进入内核态的途径是中断/异常/系统调用：用户程序主动发起系统调用（访管/陷入）、发生事先不可知的异常、外设完成操作发中断，都会把处理器切换到内核态并把控制权交给 OS；用户程序执行特权指令被拒绝而形成的“非法操作”事件，也由中断机制转交 OS 处理。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">4.</span>为什么把“启动I/O”等指令定义为特权指令？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>课件明确：I/O 指令、停机指令属于<b>特权指令</b>，只有监控程序（OS）能执行，用户程序只能执行一般指令，需要功能时通过系统调用（广义指令）请求。<br>原因：<span class="flag">课件未展开说明</span>。按课件逻辑可推：I/O 设备由 OS 统一管理，若允许用户程序直接启动/控制设备，会破坏设备与数据安全，干扰多道程序的资源分配与保护。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">5.</span>怎样限制用户程序使用特权指令？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>用户程序占用 CPU 时，让 CPU 在<b>用户态</b>下工作；此时若出现特权指令，CPU 拒绝执行并形成一个“<b>非法操作</b>”事件；中断机制识别该事件后转交操作系统处理，由 OS 通知用户“程序中有非法指令”。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">6.</span>什么是分级存储体系结构？解决什么问题？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>按容量、速度、成本把存储器分成若干级：越靠近 CPU 的级别容量越小、速度越快、每比特价格越高；越往下容量越大、速度越慢、价格越低。用“较小较贵而快速”的设备由“较大较便宜而慢速”的设备作后盾，通过控制访问频率提高系统效能。<br>解决的问题：容量、速度、成本三个目标不可能同时最优，必须权衡；层次化结构配合程序访问局部性，使平均访问时间接近高速级，同时获得大容量与低成本。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">7.</span>简述程序局部性原理。</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>程序执行时有大量循环和子调用，这些程序段会重复存取相同的指令集合；数据存取也有类似局部性，在较短时间内稳定在一个局部区域；处理器主要与这个局部打交道；经过一段时间后，使用的代码与数据集合会改变。它是提高存储系统效能的关键。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">8.</span>什么是存储保护？有哪些实现方法？OS与硬件如何配合实现？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>存储保护：对主存信息加以保护、使操作系统不被破坏，防止程序越界危害其他用户与整个系统，是 OS 正确运行的基本条件之一，必须有硬件支持。<br>方法：①<b>界地址寄存器</b>——设一对界限寄存器存放作业下限/上限，或用基址寄存器＋限长寄存器；访存时硬件自动判断越界，越界产生程序中断（越界中断/存储保护中断）。②<b>存储键</b>——每个存储块附一个保护键；作业进入主存时 OS 分给唯一键号并写入其各存储块，运行时把该键号放入 PSW 的存储键钥匙域；每次访存比较块键与钥匙，相符允许、不符拒绝并报警。<br>配合：OS 负责分配键号、设置界限寄存器、处理保护中断；硬件负责每次访存的比较与触发中断。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">9.</span>什么是中断？为什么说中断对现代计算机很重要？中断的作用是什么？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>中断是 CPU 对系统中或系统外发生的<b>异步事件</b>（无一定时序关系、随机发生的事件）的响应：暂停当前程序转去处理，处理完再返回断点继续执行。<br>重要性：中断使主机与外设并行工作，是 OS 管理 I/O、处理外部事件的基础，也是用户态进入内核态、OS 获得控制权的途径。<br>作用：①解决主机与外设并行工作；②消除因外设慢速造成的主机等待；③为多机操作与实时处理提供硬件基础；④充分发挥处理器使用效率；⑤提高系统实时能力。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">10.</span>中断向量是什么？作用是什么？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>中断向量是设备接口为标识自己而向处理器发送的具有唯一性的标识，即“该设备在中断向量表中的表目地址指针”。<br>作用：CPU 据中断向量号查询中断向量表，获得与该中断源相联系的中断处理程序入口地址，并把 PC 置为该地址，从而转入处理程序，实现“向量中断”、快速识别中断源。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">11.</span>中断响应主要做哪些工作？中断处理的主要步骤是什么？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>响应（时机：每条指令执行周期的最后时刻扫描中断寄存器）：①处理器接收中断信号；②保护现场——把断点的 PSW、PC（下一条指令位置）及部分寄存器值存入系统堆栈；③分析中断向量，取得处理程序入口地址；④将 PC 置为该入口地址；⑤调用中断处理程序、移交控制权（同时切换到内核态）。<br>处理：分辨并接收中断信号 → 保护现场 → 分析中断原因 → 调用中断处理程序处理 → 处理完恢复现场与处理器状态 → 返回原程序（可发生中断嵌套）。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">12.</span>为什么要对中断进行屏蔽？多个中断同时发生如何处理？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>屏蔽原因：正在运行的程序有时不希望被某些事件打断；在 PSW 中设置中断屏蔽码可屏蔽指定类型中断，各设备接口也有中断禁止位；禁止位置位则屏蔽，未置位时只接受优先级高于当前程序的中断。注意：机器故障中断不可屏蔽，必须立即响应。<br>多个中断同时发生：按中断优先级，CPU 响应优先级最高者（机器故障 &gt; 程序/访管 &gt; 外部 &gt; 输入输出）。更优的处理策略是<b>中断嵌套</b>：允许高优先级中断打断低优先级中断处理过程，现场逐层压入系统堆栈，处理完逐层弹出恢复。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">13.</span>硬件中断装置的作用是什么？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>接收中断源发出的中断请求，并把中断信号寄存在中断寄存器（中断逻辑线路中若干触发器全体）中；按优先级响应，将处理器控制权移交给与该中断源对应的中断处理程序，并配合中断向量确定处理程序入口。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">14.</span>常用I/O控制技术有哪些？各有什么特点？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>①<b>程序轮询</b>：CPU 定期查询各 I/O 控制器状态，有请求就处理直到完成；耗费大量时间、效率低，已淘汰。<br>②<b>通道</b>：独立于 CPU、专门负责 I/O 传输的处理单元（I/O 处理机），统一管理外设、代替 CPU 控制 I/O，使 CPU 与外设并行工作。<br>③<b>DMA</b>：由总线上的独立控制单元自动控制成块数据在内存与 I/O 单元之间传送；CPU 发一条命令（含设备编址、主存编址、传送长度）后即可做其他事，结束时由 DMA 发中断；存在总线竞争，会使 CPU 访存略慢，但不引起中断、不保存上下文。<br>④<b>缓冲</b>：用缓冲区暂存数据，解决部件之间速度不匹配。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">15.</span>缓冲技术的作用与工作原理？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>作用：缓解 CPU 处理数据速度与设备传输速度不相匹配的矛盾。缓冲区是硬件设备之间传输数据时专门暂存数据的存储区域，用于 CPU 与主存、CPU 与外设、设备与设备之间通信。<br>原理：数据先进入缓冲区，再按需取出或送入，使快慢双方解耦。多缓冲（Cache）技术可提高设备利用率：Cache 离 CPU 最近，CPU 先查一级、再查二级、最后查系统内存；主存按块划分（每块 K 字，共 M＝2<sup>n</sup>/K 块），Cache 有 C 个槽（C 远小于 M），块不在 Cache 时整块调入某槽，由 Cache 管理单元按策略替换，槽中标记指明对应的主存块。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">16.</span>时钟对OS有什么重要作用？硬件时钟、软件时钟如何实现？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>作用：在多道程序运行中发现死循环、防止机时浪费；在分时系统中实现时间片轮转；在实时系统中按时间间隔输出信号控制设备；定时唤醒外部事件；记录用户和系统所需的绝对时间（年月日）。<br>硬件时钟：电路中的晶体振荡器每隔一定间隔产生固定脉冲频率，时钟寄存器按脉冲数加 1。软件时钟：用内存单元模拟时钟寄存器，由一段程序计算相应脉冲数，对内存时钟寄存器加 1 或减 1。课件小结另提绝对时钟与相对时钟（间隔时钟）。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">17.</span>系统调用与一般过程调用的区别？系统调用的主要处理过程？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>区别（四方面）：①<b>运行状态</b>——系统调用的调用程序在用户态、被调用程序在内核态；一般过程调用两者同一状态。②<b>状态转换</b>——系统调用发生用户态→内核态切换（由访管/陷入指令与硬件自动完成）；一般调用无切换。③<b>返回问题</b>——系统调用返回时可能重新调度，不一定立即返回原调用程序；一般调用一定返回调用点。④<b>嵌套调用</b>——系统调用一般不允许嵌套；一般过程调用允许。<br>处理过程：用户发出系统调用指令 → 处理机中断并通知陷入（TRAP）处理机构 → 保存处理机现场 → 按事先给定的功能号查入口地址表找到系统子程序 → 执行该系统功能 → 恢复现场、返回用户程序。参数传递可用陷入指令自带参数、通用寄存器传参，或由硬件在访管中断时自动把 PSW 由用户模式转为系统模式。</div>
+</div>
+<h3>第3章 进程线程模型</h3>
+<div class="qa">
+<p class="q"><span class="num">1.</span>进程的定义与组成要素？进程与程序的联系与区别？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>定义：进程是具有一定独立功能的程序在某个数据集合上的<b>一次运行活动</b>，是系统进行资源分配和调度的一个独立单位。组成：<b>程序＋数据＋进程控制块（PCB）</b>。<br>联系：程序是进程的组成部分之一；进程运行的目标是执行它所对应的程序；进程由程序、数据、PCB 三部分组成。<br>区别：程序是静态的，进程是动态的；进程是程序的一个执行过程；程序的存在是永久的，进程有生命周期；一个程序可产生多个进程（前提是该程序可再入）。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">2.</span>画三状态/五状态/七状态模型并说明转换条件。</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>①<b>三状态</b>：运行（已获 CPU 并执行）、就绪（具备运行条件但未获 CPU）、阻塞（因等待某事件暂不能运行）。转换：就绪→运行（进程调度分配处理机）；运行→就绪（时间片用完）；运行→阻塞（等待其他资源/事件）；阻塞→就绪（等待的事件发生）。<br>②<b>五状态</b>：在三状态外加创建（正在创建、尚不能运行）与结束（已结束运行，回收除 PCB 外的资源）。转换：创建→就绪（提交，完成创建）；就绪→运行（调度）；运行→就绪（超时）；运行→阻塞（事件等待）；阻塞→就绪（事件出现）；运行→结束（释放）。<br>③<b>七状态</b>：五状态未区分地址空间在内存还是外存，增加就绪挂起（在外存，进入内存即可运行）与阻塞挂起（在外存并等待事件）。转换：挂起（内存→外存，含就绪→就绪挂起、阻塞→阻塞挂起、运行→就绪挂起）；激活（外存→内存，就绪挂起→就绪、阻塞挂起→阻塞）；事件出现（阻塞→就绪、阻塞挂起→就绪挂起）；提交（创建→就绪或就绪挂起）。参考图示见图1、图2。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">3.</span>PCB的作用、内容与组织方式？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>作用：描述进程的基本情况以及运行变化过程；PCB 是<b>进程存在的唯一标志</b>——创建进程时设置 PCB，利用 PCB 控制和管理进程，撤消时收回 PCB，进程随之消亡。<br>内容（两大类）：<b>调度信息</b>（进程名、进程号、存储信息、优先级、当前状态、资源清单、“家族”关系、消息队列指针、进程队列指针、当前打开文件等）；<b>现场信息</b>（PSW、时钟、界地址寄存器等；中断进程时必须把中断时刻内容记入）。<br>组织：①线性方式——所有 PCB 不分状态放在一张 PCB 表，简单无额外开销，但需扫描全表；②索引方式——相同状态的进程分别设 PCB 索引表；③链接方式——同状态 PCB 用链接字构成队列，链接字指出下一 PCB 编号/地址，0 表示队尾，队首由内存固定单元的队列指针指示。进程队列分就绪队列、等待队列（每种事件一个）、运行队列（单 CPU 系统一个）。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">4.</span>进程控制原语有哪些？各自完成什么动作？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>原语是若干条指令组成、实现特定操作功能的指令序列：连续、不可分割、执行不可间断，<b>必须在管态执行且常驻内存</b>。进程控制原语：创建、撤消、挂起、激活、阻塞、唤醒、改变进程优先级等。<br>①创建：为新进程建立 PCB（父进程→子进程）；②撤消：撤消 PCB，撤消其一切“子孙进程”，释放全部资源；③阻塞：运行→阻塞，中断 CPU 执行，把 CPU 当前状态存入 PCB 现场信息，状态置等待并插入该事件等待队列；④唤醒：等待→就绪，从等待队列撤出并插入就绪队列等待调度。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">5.</span>fork 的返回值含义；父进程先退出时子进程的父进程是谁？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>fork 返回：失败返回小于 0（进程 ID 不可能小于 0）；成功时<b>子进程中返回 0</b>，<b>父进程中返回子进程的 PID</b>。父子进程 fork 后并发执行；若父进程先终止，子进程的父进程被系统指定为 <b>init 进程（PID＝1）</b>。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">6.</span>线程的组成要素？线程与进程的关系（调度、并发、资源、开销）。</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>组成（线程控制块 thread 结构，四部分）：①唯一的线程标识符；②描述处理器工作情况的一组寄存器内容（PC、状态寄存器、通用寄存器等）；③两个栈指针（一个指向核心栈、一个指向用户栈）；④一个私有存储区（存放现场保护信息和相关统计信息）。<br>关系：<table class="mini"><thead><tr><th>比较概念</th><th>线程</th><th>进程</th></tr></thead><tbody><tr><td>基本功能</td><td>调度的基本单位</td><td>资源分配的基本单位</td></tr><tr><td>系统开销</td><td>切换开销小</td><td>切换开销大</td></tr><tr><td>资源分配</td><td>共享所属进程的资源</td><td>独占资源</td></tr><tr><td>通信方式</td><td>共享内存地址空间</td><td>使用进程通信的系统调用</td></tr><tr><td>并发性</td><td>更强</td><td>更弱</td></tr></tbody></table>补充：线程又称轻量级进程/进程元；引入线程后进程仍是资源拥有的独立单位；创建/撤消进程开销显著大于线程，进程切换开销远大于线程切换。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">7.</span>用户级线程与核心级线程的实现方式及优缺点比较。</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span><b>用户级线程</b>：创建、撤消、切换都不用系统调用，管理全由应用程序完成；每个进程有私有线程表，核心空间有进程表。优点：切换速度快；可采用适合自己要求的调度算法；可运行在任何操作系统上。缺点：一个线程执行系统调用时，同进程内所有线程都被阻塞；多线程应用不具多处理器优点。<br><b>核心级线程</b>：创建、撤消、切换都由核心实现；核心保留线程控制块以感知线程，线程表在核心空间，核心以线程为调度基本单位。优点：核心可同时调度同进程多个线程、真正并行；某线程阻塞可调度同进程另一线程；核心线程本身也可多线程。缺点：控制转移开销大；应用进程无法影响线程切换。<br>比较：切换速度用户级更快；系统调用时用户级把调用看作整个进程的行为，核心级以线程为单位调度；调度单位上用户级以进程为单位、核心级以线程为单位。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">8.</span>Pthread 主要函数及各自作用。</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>Pthread（POSIX thread）是把所有线程映射到单个内核级进程的用户级线程库。主要函数：<b>pthread_create()</b> 创建新线程；<b>pthread_join()</b> 等待指定线程退出；<b>pthread_exit()</b> 结束调用线程；<b>pthread_yield()</b> 释放 CPU 让另一线程运行；<b>pthread_attr_init()</b> 创建并初始化线程属性结构；<b>pthread_attr_destroy()</b> 删除线程属性结构。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">9.</span>协程的提出原因与特点。</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>原因：线程数量非常多时占用大量内存空间，过多线程切换占用大量系统时间。特点：协程是运行在线程之上的<b>轻量级线程</b>；一个协程执行完，让另一协程运行在当前线程之上；并不增加线程数量，只是在线程基础上通过<b>分时复用</b>运行多个协程；切换在<b>用户态</b>完成，代价比线程用户态↔内核态切换小很多。</div>
+</div>
+<h3>第4章 进程线程调度</h3>
+<div class="qa">
+<p class="q"><span class="num">1.</span>为什么说进程调度把一台物理机变成多台逻辑处理机？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>因为进程调度按算法把 CPU 轮流分配给各就绪进程：多道程序并发执行时“宏观上并行、微观上串行”，各进程轮流占用 CPU，每个进程都感到自己在独占处理器（课件在分时系统的“独占性”中表述为“每个用户感觉不到计算机为其他人服务”）。于是同一台物理 CPU 在逻辑上被分给多个进程，相当于多台逻辑处理机。课件同时指出：进程调度程序是 OS 的真正核心，直接负责 CPU 分配，是各进程的“切换开关”。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">2.</span>OS如何通过调度算法把CPU分配给合适的进程？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>进程调度程序完成三件事：<b>保存现场</b>（把当前进程的 PSW、PC、寄存器等存入其 PCB）→ <b>挑选进程</b>（按既定算法从就绪队列中选出下一个进程，如 FCFS 取队头、优先级法取优先级最高者、RR 取队首并轮转）→ <b>恢复现场</b>（恢复选中进程的现场，使它从断点继续运行）。若有实时进程则实时进程优先（Linux 实例）。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">3.</span>优先级调度系统中：没有运行进程是否一定没有就绪进程？运行进程是否一定是优先数最高的？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>①不一定。可能正处于调度/切换过程中而暂时没有运行进程；也可能所有进程都在阻塞，此时确实没有就绪进程。若存在就绪进程且调度已完成，单 CPU 下通常应有一个被选中运行。<br>②不一定。若采用<b>非抢占式</b>优先级调度，低优先级的进程正在运行时，即使有更高优先级进程进入就绪队列也不会打断它；只有<b>抢占式</b>才会立即抢占。<br><span class="flag">说明：</span>课件只给出抢占/非抢占与“从就绪队列选优先级最高者”的规则，未直接讨论“空闲”情形，①为按状态模型与调度规则推断。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">4.</span>平均每进程I/O阻塞前运行T、切换时间S、时间片Q：给出 Q=∞、Q>T、S&lt;Q&lt;T、Q=S、Q→0 时CPU利用率的计算公式。</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>按“进程运行 T 后进入 I/O 阻塞，切换一次耗 S，CPU 只在一个进程可运行时才工作”推导，忽略最后一次是否切换：<br><pre class="calc">(1) Q=∞：一次连续运行 T 后阻塞，每轮 T 运行 + S 切换
+     U = T / (T + S)
+
+(2) Q &gt; T：进程在时间片内就跑完 T 并阻塞，等价于(1)
+     U = T / (T + S)
+
+(3) S &lt; Q &lt; T：每跑 Q 切换一次，T 内约需 T/Q 个时间片
+     开销 ≈ (T/Q)·S
+     U = T / (T + (T/Q)S) = Q / (Q + S)
+
+(4) Q = S：U = T / (T + (T/S)S) = T / (2T) = 50%
+
+(5) Q→0：切换次数趋于无穷，切换开销占主导
+     U → 0</pre><span class="flag">说明：</span>课件只给出该复习题与题设，未给答案；以上为按题设推导。严格计算应取 ⌈T/Q⌉ 个时间片，结果会因是否计入最后一次切换而略有差别。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">5.</span>调度过程是怎么实现的？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>①在调度时机到来时进入调度：创建进程、任务完成、等待资源、中断发生、运行到时（另见 Linux 的五种调度时机）。<br>②保存当前进程现场（PSW、PC 及 CPU 寄存器等一切机器状态）到其 PCB。<br>③按调度算法从就绪队列挑选下一个进程（必要时考虑优先级、实时进程优先等）。<br>④恢复选中进程的现场，把 CPU 交给它，使其从断点继续运行；若无就绪进程则 CPU 空闲。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">6.</span>5个批处理作业A—E几乎同时到达，运行时间10、6、2、4、8分钟，优先数3、5、2、1、4（5最高）。分别用RR（公平共享CPU）、优先级调度、FCFS（按10、6、2、4、8）、SJF计算平均周转时间。</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>假设：均在 t=0 到达、忽略切换开销；优先级/FCFS/SJF 为单道运行至结束；全部 CPU 密集型。<br><b>(1) 优先级调度</b>（5 最高）：B(5)→E(4)→A(3)→C(2)→D(1)<table class="mini"><thead><tr><th>作业</th><th>运行</th><th>开始</th><th>完成</th><th>周转</th></tr></thead><tbody><tr><td>B</td><td>6</td><td>0</td><td>6</td><td>6</td></tr><tr><td>E</td><td>8</td><td>6</td><td>14</td><td>14</td></tr><tr><td>A</td><td>10</td><td>14</td><td>24</td><td>24</td></tr><tr><td>C</td><td>2</td><td>24</td><td>26</td><td>26</td></tr><tr><td>D</td><td>4</td><td>26</td><td>30</td><td>30</td></tr></tbody></table>平均周转时间 = (6+14+24+26+30)/5 = <b>20 分钟</b>。<br><b>(2) FCFS</b>（按 A10、B6、C2、D4、E8）：完成时刻 10、16、18、22、30，周转同为 10、16、18、22、30；平均 = 96/5 = <b>19.2 分钟</b>。<br><b>(3) SJF</b>：C(2)→D(4)→B(6)→E(8)→A(10)：完成 2、6、12、20、30；平均 = 70/5 = <b>14 分钟</b>。<br><b>(4) RR 公平共享</b>（按处理器共享、时间片趋于 0 的轮转理解）：<pre class="calc">5 道平分 CPU（各 1/5），到 t=10 各完成 2 → C(2) 完成
+t=10→18 剩 4 道（各 1/4），各再完成 2 → D(4) 于 t=18 完成
+t=18→24 剩 3 道（各 1/3），各再完成 2 → B(6) 于 t=24 完成
+t=24→28 剩 2 道（各 1/2），各再完成 2 → E(8) 于 t=28 完成
+t=28→30 A 独占，完成余下 2 → A(10) 于 t=30 完成
+完成时刻：C=10, D=18, B=24, E=28, A=30</pre>平均周转时间 = (10+18+24+28+30)/5 = <b>22 分钟</b>。<br><span class="flag">说明：</span>课件未指定时间片大小，故按“公平共享”作处理器共享计算。若改用 q=1 的轮转，可逐片模拟得到完成时刻 C=8、D=17、B=23、E=28、A=30，平均为 106/5 = <b>21.2 分钟</b>；两种理解都需写明假设。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">7.</span>多处理器系统都有哪些类别？分别是如何进行进程调度和线程调度的？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>类别：①松耦合、分布式多处理器、集群；②专门功能的处理器；③紧耦合多处理。<br>进程调度：大多数传统多处理器系统中进程并不指定到专门处理器；可以只有一条队列，也可以有多条基于优先级的队列送入同一处理器池，系统可看作<b>多服务器排队结构</b>。设计要考虑粒度（把进程分配到处理器、单处理器上多道、进程的实际分派）与静态分配的缺点（处理器可能空闲、调度开销与目标处理器无关），以及主从式分配的两个缺点（主处理器失效导致全系统失效、主处理器成为瓶颈）。<br>线程调度：单处理器中线程可重叠 I/O、切换代价小；多处理器中可开发真正并行性。四种方式：<b>加载共享</b>（负载均匀、无需集中调度器、可用优先级方案；缺点是中心队列须互斥、被抢占线程可能换处理器恢复、线程高协作时切换影响大）、<b>组调度</b>、<b>专用处理器分配</b>、<b>动态调度</b>；分配算法可用 FCFS、最少线程数优先、可抢占的最少线程数优先。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">8.</span>什么是彩票调度？</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>一种<b>概率调度算法</b>：给每个进程分发一定数量的彩票，调度器从所有彩票中随机抽取一张，持有该彩票的进程获得 CPU。想让某进程多占 CPU 就多发彩票；给每个进程至少一张彩票即可防止饥饿（获得 CPU 的概率大于 0）。</div>
+</div>
+<div class="qa">
+<p class="q"><span class="num">9.</span>设计实时调度算法需要考虑哪些因素？列出并定义四类实时调度算法。</p>
+<div class="write-space" aria-hidden="true"></div>
+<div class="answer"><span class="tag">参考答案</span>考虑因素：是否执行可调度性分析；分析是静态还是动态；分析结果是否在运行时分派任务时产生调度或计划；任务的就绪时间、启动最后期限、完成最后期限、处理时间、资源需求、优先级、子任务结构（7 项属性）；是否允许抢占（抢占是重要设计问题）；过载时的处理。<br>四类方法：①<b>静态表驱动法</b>——事先做可调度性分析并生成调度表，适用于周期性任务；②<b>静态优先级驱动抢占法</b>——按固定优先级抢占，机制与大多数非实时多道程序系统的优先级抢占调度相同；③<b>基于动态规划调度法</b>——任务到达未执行时，尝试创建包含已调度任务与新任务的调度，若新任务满足最后期限且当前任务不错过最后期限则修订调度；④<b>动态尽力调度法</b>——运行时不保证事先分析，尽力而为地调度。</div>
+</div>
+
+</main>
+</div>
+</body>
+</html>
